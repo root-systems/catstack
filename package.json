@@ -1,0 +1,32 @@
+{
+  "name": "craftworks-todomvc",
+  "version": "0.0.0",
+  "description": "production-quality TodoMVC example",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahdinosaur/craftworks-todomvc.git"
+  },
+  "keywords": [
+    "todomvc",
+    "example",
+    "react",
+    "redux",
+    "frp",
+    "functional",
+    "reactive",
+    "immutable",
+    "feathers",
+    "ddd",
+    "tcomb"
+  ],
+  "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.os)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahdinosaur/craftworks-todomvc/issues"
+  },
+  "homepage": "https://github.com/ahdinosaur/craftworks-todomvc#readme"
+}
