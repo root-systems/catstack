@@ -1,5 +1,9 @@
 # Craftworks todomvc
 
+** work in progress **
+
+production-quality TodoMVC
+
 ## stack
 
 - task runner: [npm scripts](http://substack.net/task_automation_with_npm_run)
@@ -41,6 +45,7 @@
 - client router: [redux-router](https://www.npmjs.com/package/redux-router)
 - client views: [react](https://www.npmjs.com/package/react)
 - client forms: [tcomb-form](https://github.com/gcanti/tcomb-form)
-- tests: [ava](https://www.npmjs.com/package/ava)
+- test specs: [tape](https://www.npmjs.com/package/tape)
+- test features: [cuke-tap](https://www.npmjs.com/package/cuke-tap)
 
 refs: [0](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html), [1](http://blog.workshape.io/the-3ree-stack-react-redux-rethinkdb-express-js/)
