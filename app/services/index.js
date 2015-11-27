@@ -1,7 +1,23 @@
-var fs = require('fs')
-var { filter } = require('rambda')
+const fs = require('fs')
+const { map, filter, invoker, zip } = require('ramda')
+const { join, basename } = require('path')
 
-filter(
-  fs.readdirSync(__dirname),
-  (name) => name.endsWith('index.js')
+const serviceCreatorNames = filter(
+  (name) => name !== 'index',
+  map(
+    basename,
+    fs.readdirSync(__dirname)
+  )
 )
+
+const serviceCreators = zip(
+  serviceCreatorNames,
+  map(
+    (name) => {
+      require(join(__dirname, name))
+    },
+    serviceCreatorNames
+  )
+)
+
+module.exports = serviceCreators

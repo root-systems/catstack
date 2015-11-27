@@ -1,5 +1,11 @@
 const feathers = require('feathers')
+const { mapObj, reduce } = require('ramda')
 
-const { createServices } = require('./services')
+const createServices = require('./services')
 
-createServices()
+function start (config) {
+  const services = mapObj(
+    (serviceCreator, name) => serveCreator(config[name]),
+    serviceCreators
+  )
+}
