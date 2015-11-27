@@ -4,7 +4,16 @@
   "description": "production-quality TodoMVC example",
   "main": "index.js",
   "scripts": {
-    "test": "ava"
+    "lint": "snazzy",
+    "format": "snazzy --format",
+    "test": "(npm run spec & npm run feature)",
+    "spec": "node spec",
+    "feature": "node feature",
+    "dev-server": "nodemon app/server",
+    "prod-server": "node app/server",
+    "dev-client": "budo app/client.js -d --serve bundle.js --live",
+    "prod-client": "browserify app/client.js -o bundle.js -g uglifyify"
+
   },
   "repository": {
     "type": "git",
@@ -23,10 +32,19 @@
     "ddd",
     "tcomb"
   ],
-  "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.os)",
+  "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.is)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ahdinosaur/craftworks-todomvc/issues"
   },
-  "homepage": "https://github.com/ahdinosaur/craftworks-todomvc#readme"
+  "homepage": "https://github.com/ahdinosaur/craftworks-todomvc#readme",
+  "devDependencies": {
+    "cuke-tap": "^1.0.2",
+    "jsdom": "^7.1.0",
+    "nodemon": "^1.8.1",
+    "tape": "^4.2.2"
+  },
+  "dependencies": {
+    "ramda": "^0.18.0"
+  }
 }
