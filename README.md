@@ -1,4 +1,4 @@
-# Craftworks todomvc
+# production-todomvc
 
 ** work in progress **
 
