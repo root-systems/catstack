@@ -10,10 +10,18 @@
     "test": "(npm run spec & npm run feature)",
     "spec": "node spec",
     "feature": "node feature",
-    "dev-server": "nodemon server",
-    "prod-server": "node server",
-    "dev-client": "budo client -d --serve bundle.js --live",
-    "prod-client": "browserify client -o bundle.js -g uglifyify"
+    "dev:client": "budo client --dir assets --serve bundle.js --live -- -d",
+    "dev:server": "nodemon server",
+    "prod:client": "browserify client -o assets/bundle.js -g uglifyify",
+    "prod:server": "node server",
+    "dev": "npm-run-all -p dev:*",
+    "prod": "npm-run-all -s prod:*"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "sheetify/transform"
+    ]
   },
   "repository": {
     "type": "git",
@@ -39,6 +47,7 @@
   },
   "homepage": "https://github.com/ahdinosaur/production-todomvc#readme",
   "devDependencies": {
+    "budo": "^6.1.0",
     "cuke-tap": "^1.0.2",
     "jsdom": "^7.1.0",
     "nodemon": "^1.8.1",
@@ -49,7 +58,12 @@
     "babel-plugin-transform-object-rest-spread": "^6.1.18",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
+    "babelify": "^7.2.0",
     "feathers": "^1.2.0",
-    "ramda": "^0.18.0"
+    "lnfs-cli": "^1.0.1",
+    "npm-run-all": "^1.3.2",
+    "ramda": "^0.18.0",
+    "sheetify": "^3.1.0",
+    "uglifyify": "^3.0.1"
   }
 }
