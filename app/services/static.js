@@ -1,4 +1,5 @@
 const serveStatic = require('serve-static')
+const { join } = require('path')
 
 module.exports = createStaticService
 

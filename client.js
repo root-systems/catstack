@@ -1,1 +1,1 @@
-require('./app/client')
+require('app/client')

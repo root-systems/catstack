@@ -1,26 +1,23 @@
 const React = require('react')
 const { render } = require('react-dom')
 const { createStore, applyMiddleware } = require('redux')
+import { reduxReactRouter, routerStateReducer, ReduxRouter } from 'redux-router';
 const { Provider } = require('react-redux')
-const logger = require('redux-logger')
 const thunk = require('redux-thunk')
 
-const reducer = require('./reducers')
-const { getAllTodos } = require('./actions')
-const App = require('./containers/App')
+const createInitialState = require('app/state')
+const configureStore = require('app/store')
+const { getAllTodos } = require('app/actions')
+const Root = require('app/containers/root')
 
-const middleware = process.env.NODE_ENV === 'production' ?
-  [ thunk ] :
-  [ thunk, logger() ]
-
-const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore)
-const store = createStoreWithMiddleware(reducer)
-
-store.dispatch(getAllTodos())
-
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+const store = configureStore(
+  createInitialState()
 )
+
+//store.dispatch(getAllTodos())
+
+const main = document.createElement('main')
+
+document.body.appendChild(main)
+
+render(<Root />, main)

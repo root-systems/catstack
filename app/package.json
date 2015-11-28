@@ -2,5 +2,14 @@
   "browser": {
     "./api.js": "./clients/index.js",
     "./config.js": "./config-browser.js"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "envify",
+      ["evalify", { "files": [ "config-browser.js" ] } ],
+      "bulkify",
+      "sheetify/transform"
+    ]
   }
 }
