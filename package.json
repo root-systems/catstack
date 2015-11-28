@@ -4,6 +4,7 @@
   "description": "production-quality TodoMVC example",
   "main": "index.js",
   "scripts": {
+    "postinstall": "lnfs app node_modules/app",
     "lint": "snazzy",
     "format": "snazzy --format",
     "test": "(npm run spec & npm run feature)",
