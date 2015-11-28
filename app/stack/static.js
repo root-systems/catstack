@@ -1,8 +1,8 @@
 const serveStatic = require('serve-static')
 const { join } = require('path')
 
-module.exports = createStaticService
+module.exports = createStatic
 
-function createStaticService (config) {
+function createStatic (config) {
   return serveStatic(config.root, config)
 }

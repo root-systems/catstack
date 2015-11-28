@@ -13,13 +13,15 @@ let middleware = []
 middleware.push(thunk)
 
 if (process.env.NODE_ENV === 'development') {
-  const { persistState } = require('redux-devtools')
+  var { persistState } = require('redux-devtools')
+  
+  var DevTools = require('app/containers/dev-tools')
 
   middleware.push(logger())
 }
 
 storesEnhancers.push(
-  applyMiddleware(middleware)
+  applyMiddleware(...middleware)
 )
 
 if (process.env.NODE_ENV === 'development') {

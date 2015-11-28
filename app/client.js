@@ -16,8 +16,7 @@ const store = configureStore(
 
 //store.dispatch(getAllTodos())
 
-const main = document.createElement('main')
-
-document.body.appendChild(main)
-
-render(<Root />, main)
+render(
+  <Root />,
+  document.querySelector('main')
+)

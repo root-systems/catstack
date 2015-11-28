@@ -11,8 +11,10 @@
     "spec": "node spec",
     "feature": "node feature",
     "dev:client": "watchify client -o assets/bundle.js -dv -p browserify-hmr",
+    "dev:assets": "cpx \"app/assets/**/*\" assets -w",
     "dev:server": "nodemon server",
     "prod:client": "browserify client -o assets/bundle.js -g uglifyify",
+    "prod:assets": "cpx \"app/assets/**/*\" assets",
     "prod:server": "node server",
     "dev": "NODE_ENV=development npm-run-all -p dev:*",
     "prod": "NODE_ENV=production npm-run-all -s prod:*"
@@ -66,6 +68,7 @@
     "browserify": "^12.0.1",
     "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
+    "cpx": "^1.2.1",
     "envify": "^3.4.0",
     "evalify": "^1.0.1",
     "feathers": "^1.2.0",

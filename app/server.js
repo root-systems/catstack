@@ -1,29 +1,13 @@
-const feathers = require('feathers')
 const { mapObjIndexed, reduce, toPairs } = require('ramda')
 
-const serviceCreators = require('./services')
+const createStack = require('app/stack')
 
 module.exports = createServer
 
-const useAll = function (app, services) {
-  return reduce((app, [name, service]) => {
-    return app.use(`/${name}`, service)
-  }, app, toPairs(services))
-}
-
 function createServer (config) {
+  const server = createStack(config)
 
-  const services = mapObjIndexed(
-    (serviceCreator, name) => {
-      return serviceCreator(config.services[name])
-    },
-    serviceCreators
-  )
-
-  const server = feathers()
-
-  useAll(server, services)
+  server.listen(config.port)
 
   return server
 }
-
