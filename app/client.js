@@ -17,6 +17,6 @@ const store = configureStore(
 //store.dispatch(getAllTodos())
 
 render(
-  <Root />,
+  <Root store={store} />,
   document.querySelector('main')
 )
