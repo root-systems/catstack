@@ -27,8 +27,8 @@ production-quality TodoMVC
       - `/app/thing/tests/views/thing-list.js`
       - `/app/list-view/index.js`
     - always require top-down (`require('things/schema')`) instead of relative.
+- configuration: `app/config.js` and [evalify](https://www.npmjs.org/package/evalify)
   - `/config/{ NODE_ENV }.js`
-- configuration: [feathers-configuration](https://www.npmjs.org/package/feathers-configuration)
 - data model: [tcomb](https://github.com/gcanti/tcomb)
 - database: [knex](https://www.npmjs.com/package/knex)
 - data validator: [tcomb-validator](https://github.com/gcanti/tcomb-validation)

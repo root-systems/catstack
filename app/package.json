@@ -1,5 +1,6 @@
 {
   "browser": {
-    "./api": "./clients"
+    "./api.js": "./clients/index.js",
+    "./config.js": "./config-browser.js"
   }
 }
