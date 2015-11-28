@@ -1,23 +1,3 @@
-const fs = require('fs')
-const { map, filter, invoker, zip } = require('ramda')
-const { join, basename } = require('path')
+const bulk = require('bulk-require')
 
-const serviceCreatorNames = filter(
-  (name) => name !== 'index',
-  map(
-    basename,
-    fs.readdirSync(__dirname)
-  )
-)
-
-const serviceCreators = zip(
-  serviceCreatorNames,
-  map(
-    (name) => {
-      require(join(__dirname, name))
-    },
-    serviceCreatorNames
-  )
-)
-
-module.exports = serviceCreators
+module.exports = bulk(__dirname, '!(index.js)')

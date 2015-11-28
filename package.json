@@ -63,6 +63,8 @@
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
     "babelify": "^7.2.0",
+    "bulk-require": "^0.2.1",
+    "bulkify": "^1.1.1",
     "evalify": "^1.0.1",
     "feathers": "^1.2.0",
     "lnfs-cli": "^1.0.1",
