@@ -10,7 +10,7 @@ production-quality TodoMVC
 - client bundler: [browserify](https://github.com/substack/browserify-handbook)
   - es6/jsx transform: [babelify](https://www.npmjs.com/package/babelify)
   - css transform: [sheetify](https://www.npmjs.com/package/sheetify)
-- utility functions: [lodash](http://lodash.com/docs)
+- utility functions: [ramda](http://ramdajs.com/docs/)
 - directory structure:
   - `/app/`
     - symlink `/app` to `/node_modules/app`
