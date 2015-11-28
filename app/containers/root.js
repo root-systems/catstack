@@ -18,8 +18,10 @@ class Root extends React.Component {
           <ReduxRouter>
             { routes }
           </ReduxRouter>
-          (process.env.NODE_ENV === 'development') ?
-            <DevTools /> : null
+          {
+            (process.env.NODE_ENV === 'development') ?
+              <DevTools /> : null
+          }
         </div>
       </Provider>
     )
