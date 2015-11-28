@@ -10,7 +10,7 @@
     "test": "(npm run spec & npm run feature)",
     "spec": "node spec",
     "feature": "node feature",
-    "dev:client": "watchify client -o assets/bundle.js -dv -p browserify-hmr",
+    "dev:client": "budo client --dir assets --serve bundle.js --live -- -dv",
     "dev:assets": "cpx \"app/assets/**/*\" assets -w",
     "dev:server": "nodemon server",
     "prod:client": "browserify client -o assets/bundle.js -g uglifyify",
@@ -47,7 +47,6 @@
     "npm": "^3.0.0"
   },
   "devDependencies": {
-    "browserify-hmr": "^0.3.1",
     "budo": "^6.1.0",
     "cuke-tap": "^1.0.2",
     "jsdom": "^7.1.0",
@@ -56,8 +55,7 @@
     "redux-devtools-dock-monitor": "^1.0.0-beta-3",
     "redux-devtools-log-monitor": "^1.0.0-beta-3",
     "redux-logger": "^2.0.4",
-    "tape": "^4.2.2",
-    "watchify": "^3.6.1"
+    "tape": "^4.2.2"
   },
   "dependencies": {
     "babel-core": "^6.2.1",
