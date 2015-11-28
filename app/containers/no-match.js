@@ -10,6 +10,5 @@ class NoMatch extends React.Component {
 }
 
 module.exports = connect(
-  NoMatch,
   (state) => { return {} }
-)
+)(NoMatch)

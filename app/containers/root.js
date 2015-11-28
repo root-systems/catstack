@@ -5,7 +5,7 @@ const { ReduxRouter } = require('redux-router')
 const routes = require('app/routes')
 
 if (process.env.NODE_ENV === 'development') {
-  var DevTools = require('app/containers/dev-tools')
+  var DevTools = require('app/components/dev-tools')
 }
 
 class Root extends React.Component {

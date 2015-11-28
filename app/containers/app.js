@@ -13,6 +13,5 @@ class App extends React.Component {
 }
 
 module.exports = connect(
-  App,
   (state) => { return {} }
-)
+)(App)

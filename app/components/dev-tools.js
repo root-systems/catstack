@@ -11,4 +11,3 @@ const DevTools = createDevTools(
 )
 
 module.exports = DevTools
-

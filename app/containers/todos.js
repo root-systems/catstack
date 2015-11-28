@@ -10,6 +10,5 @@ class Todos extends React.Component {
 }
 
 module.exports = connect(
-  Todos,
   (state) => { return {} }
-)
+)(Todos)

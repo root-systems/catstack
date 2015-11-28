@@ -4,10 +4,10 @@ const logger = require('redux-logger')
 const { reduxReactRouter, routerStateReducer, ReduxRouter } = require('redux-router')
 const { createHistory } = require('history')
 
-const rootReducer = require('app/reducers')
+const reducer = require('app/reducers')
 const routes = require('routes')
 
-let storesEnhancers  = []
+let storeEnhancers  = []
 let middleware = []
 
 middleware.push(thunk)
@@ -15,36 +15,38 @@ middleware.push(thunk)
 if (process.env.NODE_ENV === 'development') {
   var { persistState } = require('redux-devtools')
   
-  var DevTools = require('app/containers/dev-tools')
-
-  middleware.push(logger())
+  var DevTools = require('app/components/dev-tools')
 }
 
-storesEnhancers.push(
+storeEnhancers.push(
   applyMiddleware(...middleware)
 )
 
+storeEnhancers.push(
+  reduxReactRouter({
+    routes, createHistory
+  })
+)
+
 if (process.env.NODE_ENV === 'development') {
-  storesEnhancers.push(DevTools.instrument())
-  storesEnhancers.push(persistState(
+
+  storeEnhancers.push(
+    applyMiddleware(logger())
+  )
+  storeEnhancers.push(DevTools.instrument())
+  storeEnhancers.push(persistState(
     window.location.href.match(
       /[?&]debug_session=([^&]+)\b/
     )
   ))
 }
 
-storesEnhancers.push(
-  reduxReactRouter({
-    routes, createHistory
-  })
-)
-
-const finalCreateStore = compose(
-  ...storesEnhancers
+const createEnhancedStore = compose(
+  ...storeEnhancers
 )(createStore)
 
 function configureStore(initialState) {
-  const store = finalCreateStore(rootReducer, initialState)
+  const store = createEnhancedStore(reducer, initialState)
 
   if (process.env.NODE_ENV === 'development') {
     if (module.hot) {

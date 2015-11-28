@@ -1,6 +1,8 @@
+const initialState = require('app/state')
+
 module.exports = todos
 
-function todos (state = {}, action) {
+function todos (state = initialState, action) {
   switch (action.type) {
     case 'ADD_TODO':
       return {
