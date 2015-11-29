@@ -1,7 +1,6 @@
 const { createStore, compose, applyMiddleware } = require('redux')
 const thunk = require('redux-thunk')
-const logger = require('redux-logger')
-const { reduxReactRouter, routerStateReducer, ReduxRouter } = require('redux-router')
+const { reduxReactRouter } = require('redux-router')
 const { createHistory } = require('history')
 
 const reducer = require('app/reducers')
@@ -13,6 +12,7 @@ let middleware = []
 middleware.push(thunk)
 
 if (process.env.NODE_ENV === 'development') {
+  var logger = require('redux-logger')
   var { persistState } = require('redux-devtools')
   
   var DevTools = require('app/components/dev-tools')

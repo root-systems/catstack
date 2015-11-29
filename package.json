@@ -13,7 +13,7 @@
     "dev:client": "budo client --dir assets --serve bundle.js --live --pushstate -- -dv",
     "dev:assets": "cpx \"app/assets/**/*\" assets -w",
     "dev:server": "nodemon server",
-    "prod:client": "browserify client -o assets/bundle.js -g uglifyify",
+    "prod:client": "browserify client -o assets/bundle.js -g envify -g uglifyify",
     "prod:assets": "cpx \"app/assets/**/*\" assets",
     "prod:server": "node server",
     "dev": "NODE_ENV=development npm-run-all -p dev:*",
@@ -81,7 +81,7 @@
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0",
     "redux": "^3.0.4",
-    "redux-router": "^1.0.0-beta4",
+    "redux-router": "^1.0.0-beta5",
     "redux-thunk": "^1.0.0",
     "sheetify": "^3.1.0",
     "uglifyify": "^3.0.1"

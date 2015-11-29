@@ -1,16 +1,11 @@
-const initialState = require('app/state')
-
 module.exports = todos
 
-function todos (state = initialState, action) {
+function todos (state = {}, action) {
   switch (action.type) {
-    case 'ADD_TODO':
+    case 'CREATE_TODO':
       return {
         ...state,
-        todos: {
-          ...state.todos,
-          [action.payload.id]: action.payload
-        }
+        [action.payload.id]: action.payload
       }
     default:
       return state
