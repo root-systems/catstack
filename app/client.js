@@ -10,7 +10,6 @@ const createStore = require('app/store')
 const fetchElement = require('app/util/fetch-element')
 
 if (process.env.NODE_ENV === 'development') {
-  var DevTools = require('app/components/dev-tools')
 }
 
 const store = createStore(window.__data)
@@ -18,7 +17,7 @@ const history = createHistory()
 
 syncReduxAndRouter(history, store)
 
-const component = (
+const main = (
   <Router createElement={fetchElement} history={history}>
     { routes }
   </Router>
@@ -26,13 +25,21 @@ const component = (
 
 render(
   <Provider store={store} key="provider">
-    <div>
-      { component }
-      {
-        (process.env.NODE_ENV === 'development') ?
-          <DevTools /> : null
-      }
-    </div>
+    { main }
   </Provider>,
   document.querySelector('main')
 )
+
+if (process.env.NODE_ENV === 'development') {
+  const DevTools = require('app/components/dev-tools')
+
+  render(
+    <Provider store={store} key="provider">
+      <div>
+        { main }
+        <DevTools />
+      </div>
+    </Provider>,
+    document.querySelector('main')
+  )
+}

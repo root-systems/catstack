@@ -37,18 +37,18 @@ function createRender (config) {
             <RoutingContext { ...renderProps } />
           </Provider>
 
-          const html = renderToString(component)
+          const innerHtml = renderToString(component)
 
-          const fullHtml = renderFullPage(html, store.getState())
+          const html = renderFullPage(innerHtml, store.getState())
 
-          res.send(fullHtml)
+          res.send(html)
         })
       }
     })
   }
 }
 
-function renderFullPage (html, data) {
+function renderFullPage (innerHtml, initialData) {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -58,9 +58,9 @@ function renderFullPage (html, data) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <main>${ html }</main>
+        <main>${ innerHtml }</main>
         <script>
-          window.__data = ${ JSON.stringify(data) }
+          window.__data = ${ JSON.stringify(initialData) }
         </script>
         <script src="bundle.js"></script>
       </body>
