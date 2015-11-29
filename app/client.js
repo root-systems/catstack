@@ -1,19 +1,38 @@
 const React = require('react')
 const { render } = require('react-dom')
-const { createStore, applyMiddleware } = require('redux')
-import { reduxReactRouter, routerStateReducer, ReduxRouter } from 'redux-router';
 const { Provider } = require('react-redux')
-const thunk = require('redux-thunk')
+const { Router } = require('react-router')
+const { createHistory } = require('history')
+const { syncReduxAndRouter } = require('redux-simple-router')
 
-const configureStore = require('app/store')
-const { findTodos } = require('app/actions')
-const Root = require('app/containers/root')
+const routes = require('app/routes')
+const createStore = require('app/store')
+const fetchElement = require('app/util/fetch-element')
 
-const store = configureStore()
+if (process.env.NODE_ENV === 'development') {
+  var DevTools = require('app/components/dev-tools')
+}
 
-//store.dispatch(getAllTodos())
+const store = createStore(window.__data)
+const history = createHistory()
+
+syncReduxAndRouter(history, store)
+
+const component = (
+  <Router createElement={fetchElement} history={history}>
+    { routes }
+  </Router>
+)
 
 render(
-  <Root store={store} />,
+  <Provider store={store} key="provider">
+    <div>
+      { component }
+      {
+        (process.env.NODE_ENV === 'development') ?
+          <DevTools /> : null
+      }
+    </div>
+  </Provider>,
   document.querySelector('main')
 )

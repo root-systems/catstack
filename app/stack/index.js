@@ -3,7 +3,8 @@ const { mapObjIndexed, reduce, toPairs } = require('ramda')
 
 const stackCreators = {
   services: require('./services'),
-  static: require('./static')
+  static: require('./static'),
+  render: require('./render')
 }
 
 module.exports = createStack

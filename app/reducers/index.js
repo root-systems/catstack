@@ -1,8 +1,8 @@
 const bulk = require('bulk-require')
 const { combineReducers } = require('redux')
-const { routerStateReducer } = require('redux-router')
+const { routeReducer } = require('redux-simple-router')
 
 module.exports = combineReducers({
   ...bulk(__dirname, '!(index.js)'),
-  router: routerStateReducer
+  routing: routeReducer
 })
