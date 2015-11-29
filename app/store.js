@@ -24,7 +24,8 @@ storeEnhancers.push(
 
 storeEnhancers.push(
   reduxReactRouter({
-    routes, createHistory
+    //routes,
+    createHistory
   })
 )
 
