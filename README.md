@@ -1,8 +1,8 @@
-# production-todomvc
+# craftworks-todomvc
 
 ** work in progress **
 
-production-quality TodoMVC
+real-world, production-quality TodoMVC for [Craftworks](http://craftworks.enspiral.com)
 
 ## stack
 
@@ -10,25 +10,40 @@ production-quality TodoMVC
 - client bundler: [browserify](https://github.com/substack/browserify-handbook)
   - es6/jsx transform: [babelify](https://www.npmjs.com/package/babelify)
   - css transform: [sheetify](https://www.npmjs.com/package/sheetify)
+  - configuration: [evalify](https://www.npmjs.org/package/evalify)
+  - bulk require: [bulkify](https://www.npmjs.org/package/bulkify)
 - utility functions: [ramda](http://ramdajs.com/docs/)
 - directory structure:
+  - `/config/`
+    - `/config/defaults.js`
+    - `/config/{ NODE_ENV }.js`
   - `/app/`
     - symlink `/app` to `/node_modules/app`
     - e.g.
       - `/app/package.json`
       - `/app/client.js`
       - `/app/server.js`
-      - `/app/thing/schema.js`
-      - `/app/thing/service.js`
-      - `/app/thing/client.js`
-      - `/app/thing/routes.js`
-      - `/app/thing/views/thing-list.js`
-      - `/app/thing/views/thing-list.css`
-      - `/app/thing/tests/views/thing-list.js`
-      - `/app/list-view/index.js`
-    - always require top-down (`require('things/schema')`) instead of relative.
-- configuration: `app/config.js` and [evalify](https://www.npmjs.org/package/evalify)
-  - `/config/{ NODE_ENV }.js`
+      - `/app/routes.js`
+      - `/app/store.js`
+      - `/app/models/todo.js`
+      - `/app/services/todos.js`
+      - `/app/clients/todos.js`
+      - `/app/actions/todos.js`
+      - `/app/action-types/todos.js`
+      - `/app/reducers/todos.js`
+      - `/app/getters/todos.js`
+      - `/app/containers/todos.js`
+      - `/app/components/todos/index.js`
+      - `/app/components/todos/index.css`
+    - always require top-down (`require('app/models/todo')`) instead of relative.
+  - `/spec/`
+    - e.g.
+      - `/spec/services/todos.js`
+      - `/spec/components/todos.js`
+  - `/features/`
+    - e.g.
+      - `/features/steps.js`
+      - `/features/todos.feature`
 - data model: [tcomb](https://github.com/gcanti/tcomb)
 - database: [knex](https://www.npmjs.com/package/knex)
 - data validator: [tcomb-validator](https://github.com/gcanti/tcomb-validation)

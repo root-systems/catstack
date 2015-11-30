@@ -54,7 +54,7 @@ function renderFullPage (innerHtml, initialData) {
     <html lang="en">
       <head>
         <meta charset="utf-8" />
-        <title>Production TodoMVC</title>
+        <title>Craftworks TodoMVC</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>

@@ -1,7 +1,7 @@
 {
-  "name": "production-todomvc",
+  "name": "craftworks-todomvc",
   "version": "0.0.0",
-  "description": "production-quality TodoMVC example",
+  "description": "real-world production-quality TodoMVC example",
   "main": "index.js",
   "scripts": {
     "postinstall": "lnfs app node_modules/app",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahdinosaur/production-todomvc.git"
+    "url": "git+https://github.com/ahdinosaur/craftworks-todomvc.git"
   },
   "keywords": [
     "todomvc",
@@ -39,9 +39,9 @@
   "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.is)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ahdinosaur/production-todomvc/issues"
+    "url": "https://github.com/ahdinosaur/craftworks-todomvc/issues"
   },
-  "homepage": "https://github.com/ahdinosaur/production-todomvc#readme",
+  "homepage": "https://github.com/ahdinosaur/craftworks-todomvc#readme",
   "engines": {
     "node": "^4.0.0",
     "npm": "^3.0.0"
