@@ -62,5 +62,6 @@ real-world, production-quality TodoMVC for [Craftworks](http://craftworks.enspir
 - client forms: [tcomb-form](https://github.com/gcanti/tcomb-form)
 - test specs: [tape](https://www.npmjs.com/package/tape)
 - test features: [cuke-tap](https://www.npmjs.com/package/cuke-tap)
+- generators: [plop](https://github.com/amwmedia/plop)
 
 refs: [0](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html), [1](http://blog.workshape.io/the-3ree-stack-react-redux-rethinkdb-express-js/)
