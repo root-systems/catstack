@@ -1,5 +1,3 @@
-const { mapObjIndexed, reduce, toPairs } = require('ramda')
-
 const createStack = require('app/stack')
 
 module.exports = createServer
