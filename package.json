@@ -10,7 +10,7 @@
     "test": "npm-run-all -p test:*",
     "test:spec": "node spec",
     "test:feature": "node feature",
-    "dev:client": "watchify client -o assets/bundle.js -dv",
+    "dev:client": "BABEL_ENV=hot watchify client -o assets/bundle.js -dv -p browserify-hmr",
     "dev:assets": "cpx \"app/assets/**/*\" assets -w",
     "dev:server": "node-dev server",
     "prod:client": "browserify client -o assets/bundle.js -g envify -g uglifyify",
@@ -47,9 +47,14 @@
     "npm": "^3.0.0"
   },
   "devDependencies": {
+    "babel-plugin-react-transform": "github:ahdinosaur/babel-plugin-react-transform#tjk/babel-6",
+    "browserify-hmr": "^0.3.1",
     "cuke-tap": "^1.0.2",
     "jsdom": "^7.1.0",
     "node-dev": "^2.7.1",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.2.0",
     "redux-devtools": "^3.0.0-beta-3",
     "redux-devtools-dock-monitor": "^1.0.0-beta-3",
     "redux-devtools-log-monitor": "^1.0.0-beta-3",
