@@ -40,6 +40,13 @@ const createEnhancedStore = compose(
 )(createStore)
 
 function finalCreateStore(initialState) {
+
+  if (module.hot) {
+    module.hot.accept('app/reducers', () => {
+      store.replaceReducer(require('app/reducers'))
+    })
+  }
+
   return createEnhancedStore(reducer, initialState)
 }
 
