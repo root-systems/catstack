@@ -2,7 +2,7 @@
   "name": "craftworks-todomvc",
   "version": "0.0.0",
   "description": "real-world production-quality TodoMVC example",
-  "main": "index.js",
+  "main": "server",
   "scripts": {
     "postinstall": "lnfs app node_modules/app",
     "lint": "snazzy",
