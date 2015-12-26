@@ -89,7 +89,7 @@
     "redux": "^3.0.4",
     "redux-simple-router": "0.0.10",
     "redux-thunk": "^1.0.0",
-    "sheetify": "^3.1.0",
+    "sheetify": "github:ahdinosaur/sheetify#realpath",
     "uglifyify": "^3.0.1"
   }
 }
