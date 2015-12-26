@@ -47,7 +47,7 @@
     "npm": "^3.0.0"
   },
   "devDependencies": {
-    "babel-plugin-react-transform": "github:ahdinosaur/babel-plugin-react-transform#tjk/babel-6",
+    "babel-plugin-react-transform": "^2.0.0",
     "browserify-hmr": "^0.3.1",
     "cuke-tap": "^1.0.2",
     "jsdom": "^7.1.0",
