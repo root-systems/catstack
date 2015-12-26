@@ -69,6 +69,7 @@
     "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
     "cpx": "^1.2.1",
+    "create-action-types": "^2.0.0",
     "envify": "^3.4.0",
     "evalify": "^1.0.1",
     "feathers": "^1.2.0",
@@ -82,7 +83,9 @@
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0",
     "redux": "^3.0.4",
+    "redux-actions": "^0.8.0",
     "redux-simple-router": "0.0.10",
+    "redux-tcomb": "^0.1.6",
     "redux-thunk": "^1.0.0",
     "sheetify": "^3.1.0",
     "uglifyify": "^3.0.1"
