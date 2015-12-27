@@ -50,9 +50,9 @@
     "cuke-tap": "^1.0.2",
     "jsdom": "^7.1.0",
     "node-dev": "^2.7.1",
-    "redux-devtools": "^3.0.0-beta-3",
-    "redux-devtools-dock-monitor": "^1.0.0-beta-3",
-    "redux-devtools-log-monitor": "^1.0.0-beta-3",
+    "redux-devtools": "^3.0.0",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.1",
     "redux-logger": "^2.0.4",
     "tape": "^4.2.2",
     "watchify": "^3.6.1"
@@ -79,11 +79,12 @@
     "ramda": "^0.18.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "react-redux": "^4.0.0",
+    "react-redux": "^4.0.1",
     "react-router": "^1.0.0",
-    "redux": "^3.0.4",
+    "redux": "^3.0.5",
     "redux-simple-router": "0.0.10",
     "redux-thunk": "^1.0.0",
+    "serve-static": "^1.10.0",
     "sheetify": "^3.1.0",
     "uglifyify": "^3.0.1"
   }
