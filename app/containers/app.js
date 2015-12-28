@@ -1,7 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 
-class App extends React.Component {
+class AppContainer extends React.Component {
   render () {
     const { children } = this.props
 
@@ -13,5 +13,5 @@ class App extends React.Component {
 }
 
 module.exports = connect(
-  (state) => { return {} }
-)(App)
+  (state) => ({})
+)(AppContainer)

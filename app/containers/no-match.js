@@ -1,7 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 
-class NoMatch extends React.Component {
+class NoMatchContainer extends React.Component {
   render () {
     return <div>
       no match!
@@ -10,5 +10,5 @@ class NoMatch extends React.Component {
 }
 
 module.exports = connect(
-  (state) => { return {} }
-)(NoMatch)
+  (state) => ({})
+)(NoMatchContainer)

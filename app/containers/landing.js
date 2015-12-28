@@ -1,7 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 
-class Landing extends React.Component {
+class LandingContainer extends React.Component {
   render () {
     return <div>
       landing!
@@ -10,5 +10,5 @@ class Landing extends React.Component {
 }
 
 module.exports = connect(
-  (state) => { return {} }
-)(Landing)
+  (state) => ({})
+)(LandingContainer)
