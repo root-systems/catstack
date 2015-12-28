@@ -1,7 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 
-class Todos extends React.Component {
+class TodosContainer extends React.Component {
   render () {
     return <div>
       todo list!
@@ -10,5 +10,5 @@ class Todos extends React.Component {
 }
 
 module.exports = connect(
-  (state) => { return {} }
-)(Todos)
+  (state) => ({})
+)(TodosContainer)

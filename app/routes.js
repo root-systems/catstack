@@ -1,16 +1,16 @@
 const React = require('react')
 const { Route, IndexRoute } = require('react-router')
 
-const App = require('app/containers/app')
-const Landing = require('app/containers/landing')
-const Todos = require('app/containers/todos')
-const NoMatch = require('app/containers/no-match')
+const AppContainer = require('app/containers/app')
+const LandingContainer = require('app/containers/landing')
+const TodosContainer = require('app/containers/todos')
+const NoMatchContainer = require('app/containers/no-match')
 
 const routes = (
-  <Route path='/' component={App}>
-    <IndexRoute component={Landing} />
-    <Route path='todos' component={Todos} />
-    <Route path="*" component={NoMatch} />
+  <Route path='/' component={AppContainer}>
+    <IndexRoute component={LandingContainer} />
+    <Route path='todos' component={TodosContainer} />
+    <Route path="*" component={NoMatchContainer} />
   </Route>
 )
 

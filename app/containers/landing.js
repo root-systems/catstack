@@ -1,14 +1,14 @@
 const React = require('react')
 const { connect } = require('react-redux')
 
-class Landing extends React.Component {
+const Landing = require('app/components/landing')
+
+class LandingContainer extends React.Component {
   render () {
-    return <div>
-      landing!
-    </div>
+    return <Landing />
   }
 }
 
 module.exports = connect(
-  (state) => { return {} }
-)(Landing)
+  (state) => ({})
+)(LandingContainer)

@@ -5,11 +5,11 @@
   },
   "browserify": {
     "transform": [
+      ["cssify", { "modules": true }],
       "babelify",
       "envify",
       ["evalify", { "files": [ "config-browser.js" ] } ],
-      "bulkify",
-      "sheetify/transform"
+      "bulkify"
     ]
   }
 }

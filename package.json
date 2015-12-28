@@ -2,15 +2,15 @@
   "name": "craftworks-todomvc",
   "version": "0.0.0",
   "description": "real-world production-quality TodoMVC example",
-  "main": "index.js",
+  "main": "server",
   "scripts": {
     "postinstall": "lnfs app node_modules/app",
     "lint": "snazzy",
     "format": "snazzy --format",
-    "test": "(npm run spec & npm run feature)",
-    "spec": "node spec",
-    "feature": "node feature",
-    "dev:client": "watchify client -o assets/bundle.js -dv",
+    "test": "npm-run-all -p test:*",
+    "test:spec": "node spec",
+    "test:feature": "node feature",
+    "dev:client": "BABEL_ENV=hot watchify client -o assets/bundle.js -dv -p browserify-hmr",
     "dev:assets": "cpx \"app/assets/**/*\" assets -w",
     "dev:server": "node-dev server",
     "prod:client": "browserify client -o assets/bundle.js -g envify -g uglifyify",
@@ -47,9 +47,14 @@
     "npm": "^3.0.0"
   },
   "devDependencies": {
+    "babel-plugin-react-transform": "^2.0.0",
+    "browserify-hmr": "^0.3.1",
     "cuke-tap": "^1.0.2",
     "jsdom": "^7.1.0",
     "node-dev": "^2.7.1",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.2.0",
     "redux-devtools": "^3.0.0",
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.1",
@@ -69,6 +74,8 @@
     "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
     "cpx": "^1.2.1",
+    "css-modules-require-hook": "^2.1.0",
+    "cssify": "^1.0.2",
     "envify": "^3.4.0",
     "evalify": "^1.0.1",
     "feathers": "^1.2.0",
@@ -85,7 +92,6 @@
     "redux-simple-router": "0.0.10",
     "redux-thunk": "^1.0.0",
     "serve-static": "^1.10.0",
-    "sheetify": "^3.1.0",
     "uglifyify": "^3.0.1"
   }
 }
