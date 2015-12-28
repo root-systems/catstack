@@ -1,7 +1,7 @@
 const React = require('react')
 const { connect } = require('react-redux')
 
-const Landing = require('app/components/landing')
+const Landing = require('./component')
 
 class LandingContainer extends React.Component {
   render () {

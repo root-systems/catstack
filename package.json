@@ -8,8 +8,8 @@
     "lint": "snazzy",
     "format": "snazzy --format",
     "test": "npm-run-all -p test:*",
-    "test:spec": "node spec",
-    "test:feature": "node feature",
+    "test:spec": "node app/spec",
+    "test:feature": "node app/features",
     "dev:client": "BABEL_ENV=hot watchify client -o assets/bundle.js -dv -p browserify-hmr",
     "dev:assets": "cpx \"app/assets/**/*\" assets -w",
     "dev:server": "node-dev server",
@@ -47,9 +47,11 @@
     "npm": "^3.0.0"
   },
   "devDependencies": {
+    "ava": "^0.8.0",
     "babel-plugin-react-transform": "^2.0.0",
     "browserify-hmr": "^0.3.1",
     "cuke-tap": "^1.0.2",
+    "glob": "^6.0.2",
     "jsdom": "^7.1.0",
     "node-dev": "^2.7.1",
     "react-transform-catch-errors": "^1.0.0",
@@ -59,6 +61,7 @@
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.1",
     "redux-logger": "^2.0.4",
+    "run-parallel": "^1.1.4",
     "tape": "^4.2.2",
     "watchify": "^3.6.1"
   },

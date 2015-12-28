@@ -1,16 +1,23 @@
 const React = require('react')
 const { Route, IndexRoute } = require('react-router')
+const bulk = require('bulk-require')
+const { mapObjIndexed, values } = require('ramda')
 
-const AppContainer = require('app/containers/app')
-const LandingContainer = require('app/containers/landing')
-const TodosContainer = require('app/containers/todos')
-const NoMatchContainer = require('app/containers/no-match')
+const LayoutContainer = require('app/layout/container')
+const FourOhFourRoutes = require('app/four-oh-four/routes')
 
 const routes = (
-  <Route path='/' component={AppContainer}>
-    <IndexRoute component={LandingContainer} />
-    <Route path='todos' component={TodosContainer} />
-    <Route path="*" component={NoMatchContainer} />
+  <Route path='/' component={LayoutContainer}>
+    { 
+      values(mapObjIndexed(
+        (module, moduleName) => ({
+          ...module.routes,
+          key: moduleName
+        }),
+        bulk(__dirname, '!(four-oh-four)/routes.js')
+      ))
+    }
+    { FourOhFourRoutes }
   </Route>
 )
 
