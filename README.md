@@ -55,7 +55,7 @@ real-world, production-quality TodoMVC for [Craftworks](http://craftworks.enspir
 - client router: [redux-router](https://www.npmjs.com/package/redux-router)
 - client views: [react](https://www.npmjs.com/package/react)
 - client forms: [tcomb-form](https://github.com/gcanti/tcomb-form)
-- test specs: [tape](https://www.npmjs.com/package/tape)
+- test specs: [ava](https://www.npmjs.com/package/ava)
 - test features: [cuke-tap](https://www.npmjs.com/package/cuke-tap)
 - generators: [plop](https://github.com/amwmedia/plop)
 

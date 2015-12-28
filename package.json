@@ -62,7 +62,6 @@
     "redux-devtools-log-monitor": "^1.0.1",
     "redux-logger": "^2.0.4",
     "run-parallel": "^1.1.4",
-    "tape": "^4.2.2",
     "watchify": "^3.6.1"
   },
   "dependencies": {
