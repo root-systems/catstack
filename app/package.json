@@ -5,7 +5,7 @@
   },
   "browserify": {
     "transform": [
-      ["cssify", { "modules": true }],
+      ["cssify", { "modules": true } ],
       "babelify",
       "envify",
       ["evalify", { "files": [ "config-browser.js" ] } ],
