@@ -74,6 +74,8 @@
     "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
     "cpx": "^1.2.1",
+    "css-modules-require-hook": "^2.1.0",
+    "cssify": "^1.0.2",
     "envify": "^3.4.0",
     "evalify": "^1.0.1",
     "feathers": "^1.2.0",
@@ -89,7 +91,6 @@
     "redux": "^3.0.4",
     "redux-simple-router": "0.0.10",
     "redux-thunk": "^1.0.0",
-    "sheetify": "github:ahdinosaur/sheetify#realpath",
     "uglifyify": "^3.0.1"
   }
 }
