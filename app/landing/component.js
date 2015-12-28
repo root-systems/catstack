@@ -1,6 +1,6 @@
 const React = require('react')
 
-const style = require('./index.css')
+const style = require('./style.css')
 
 class Landing extends React.Component {
   render () {

@@ -19,31 +19,26 @@ real-world, production-quality TodoMVC for [Craftworks](http://craftworks.enspir
     - `/config/{ NODE_ENV }.js`
   - `/app/`
     - symlink `/app` to `/node_modules/app`
-    - e.g.
       - `/app/package.json`
       - `/app/client.js`
       - `/app/server.js`
+      - `/app/reducer.js`
       - `/app/routes.js`
-      - `/app/store.js`
-      - `/app/models/todo.js`
-      - `/app/services/todos.js`
-      - `/app/clients/todos.js`
-      - `/app/actions/todos.js`
-      - `/app/action-types/todos.js`
-      - `/app/reducers/todos.js`
-      - `/app/getters/todos.js`
-      - `/app/containers/todos.js`
-      - `/app/components/todos/index.js`
-      - `/app/components/todos/index.css`
-    - always require top-down (`require('app/models/todo')`) instead of relative.
-  - `/spec/`
-    - e.g.
-      - `/spec/services/todos.js`
-      - `/spec/components/todos.js`
-  - `/features/`
-    - e.g.
-      - `/features/steps.js`
-      - `/features/todos.feature`
+      - `/app/thing/model.js`
+      - `/app/thing/service.js`
+      - `/app/thing/client.js`
+      - `/app/thing/routes.js`
+      - `/app/thing/actions.js`
+      - `/app/thing/reducer.js`
+      - `/app/thing/getters.js`
+      - `/app/thing/components/thing-list.js`
+      - `/app/thing/components/thing-list.css`
+      - `/app/thing/spec/components/thing-list.js`
+      - `/app/thing/index.feature`
+      - `/app/thing/steps.js`
+      - `/app/list-view/index.js`
+    - only do relative requires if within module
+    - otherwise, always require top-down (`require('app/things/model')`).
 - data model: [tcomb](https://github.com/gcanti/tcomb)
 - database: [knex](https://www.npmjs.com/package/knex)
 - data validator: [tcomb-validator](https://github.com/gcanti/tcomb-validation)
@@ -60,7 +55,7 @@ real-world, production-quality TodoMVC for [Craftworks](http://craftworks.enspir
 - client router: [redux-router](https://www.npmjs.com/package/redux-router)
 - client views: [react](https://www.npmjs.com/package/react)
 - client forms: [tcomb-form](https://github.com/gcanti/tcomb-form)
-- test specs: [tape](https://www.npmjs.com/package/tape)
+- test specs: [ava](https://www.npmjs.com/package/ava)
 - test features: [cuke-tap](https://www.npmjs.com/package/cuke-tap)
 - generators: [plop](https://github.com/amwmedia/plop)
 

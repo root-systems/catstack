@@ -31,7 +31,7 @@ render(
 )
 
 if (process.env.NODE_ENV === 'development') {
-  const DevTools = require('app/components/dev-tools')
+  const DevTools = require('app/dev/tools')
 
   render(
     <Provider store={store} key="provider">
