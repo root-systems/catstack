@@ -9,24 +9,21 @@ let middleware = []
 
 middleware.push(thunk)
 
-if (process.env.NODE_ENV === 'development') {
-  var logger = require('redux-logger')
-  var { persistState } = require('redux-devtools')
-  
-  var DevTools = require('app/dev/tools')
-}
-
 storeEnhancers.push(
   applyMiddleware(...middleware)
 )
 
 if (process.env.NODE_ENV === 'development') {
+  let logger = require('redux-logger')
   storeEnhancers.push(
     applyMiddleware(logger())
   )
+
+  let DevTools = require('app/dev/tools')
   storeEnhancers.push(DevTools.instrument())
 
   if (module.browser) {
+    let { persistState } = require('redux-devtools')
     storeEnhancers.push(persistState(
       window.location.href.match(
         /[?&]debug_session=([^&]+)\b/
