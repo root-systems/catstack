@@ -1,5 +1,5 @@
 {
-  "name": "business-todomvc",
+  "name": "business-stack",
   "version": "0.0.0",
   "description": "real-world production-quality TodoMVC example",
   "main": "server",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/enspiral-craftworks/business-todomvc.git"
+    "url": "git+https://github.com/enspiral-craftworks/business-stack.git"
   },
   "keywords": [
     "todomvc",
@@ -39,9 +39,9 @@
   "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.is)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/enspiral-craftworks/business-todomvc/issues"
+    "url": "https://github.com/enspiral-craftworks/business-stack/issues"
   },
-  "homepage": "https://github.com/enspiral-craftworks/business-todomvc#readme",
+  "homepage": "https://github.com/enspiral-craftworks/business-stack#readme",
   "engines": {
     "node": "^4.0.0",
     "npm": "^3.0.0"

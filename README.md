@@ -1,8 +1,8 @@
-# business-todomvc
+# business-stack
 
 ** work in progress **
 
-real-world, production-quality TodoMVC for [Craftworks](http://craftworks.enspiral.com)
+real-world, production-quality stack for [Craftworks](http://craftworks.enspiral.com)
 
 ## stack
 
