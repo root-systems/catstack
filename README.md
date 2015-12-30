@@ -1,4 +1,4 @@
-# craftworks-todomvc
+# business-todomvc
 
 ** work in progress **
 
@@ -47,11 +47,11 @@ real-world, production-quality TodoMVC for [Craftworks](http://craftworks.enspir
 - api transport: [primus](https://www.npmjs.com/package/primus)
 - api client: [feathers-client](https://www.npmjs.com/package/feathers-client)
 - client async actions: [redux-thunk](https://www.npmjs.com/package/redux-thunk)
-- client actions: [redux-tcomb](https://www.npmjs.com/package/redux-tcomb)
-- client action-types: [create-action-types](https://www.npmjs.com/package/create-action-types)
+- client action creators: [redux-tcomb](https://www.npmjs.com/package/redux-tcomb)
+- client action types: [create-action-types](https://www.npmjs.com/package/create-action-types)
+- client action store: [redux](https://www.npmjs.com/package/redux)
 - client reducers: [redux-tcomb](https://github.com/gcanti/redux-tcomb)
 - client getters: [reselect](https://www.npmjs.com/package/reselect)
-- client store: [redux](https://www.npmjs.com/package/redux)
 - client router: [redux-router](https://www.npmjs.com/package/redux-router)
 - client views: [react](https://www.npmjs.com/package/react)
 - client forms: [tcomb-form](https://github.com/gcanti/tcomb-form)
