@@ -60,3 +60,28 @@ real-world, production-quality stack for [Craftworks](http://craftworks.enspiral
 - generators: [plop](https://github.com/amwmedia/plop)
 
 refs: [0](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html), [1](http://blog.workshape.io/the-3ree-stack-react-redux-rethinkdb-express-js/)
+
+### micro-services
+
+TODO split into micro-services based on [mad-science-stack](https://github.com/enspiral-craftworks/mad-science-stack)
+
+TODO write docs about what is a micro-service
+
+### app modules
+
+in contrast to frameworks like Rails which split our `app` into directories for each "type" of file (models, views, controllers), our `app` is split into directories for each module, where each module contains the various types of files *within* that module.
+
+each module directory may contain any of:
+
+- `index.js`: exports all the below exports from the module
+- `models/*.js`: exports [`tcomb`](https://www.npmjs.com/package/tcomb) models
+- `constants.js`: exports constants (such as [redux action types](https://www.npmjs.com/package/create-action-types))
+- `actions.js`: exports [redux actions](https://www.npmjs.com/package/redux-actions)
+- `reducer.js`: exports [redux reducer](http://redux.js.org/docs/basics/Reducers.html)
+- `routes.js`: exports [`function (store) { return <ReactRouter.Route /> }`](https://www.npmjs.com/package/react-router)
+- `getters.js`: exports [`reselect`](https://www.npmjs.com/package/reselect) getters for use in containers' `connect`
+- `containers/*.js`: exports [smart component](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) [`connect`](https://github.com/rackt/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)ed with [`react-redux`](https://www.npmjs.com/package/react-redux)
+- `components/*.js`: exports [dumb component](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+- `components/*.css`: exports [css modules](http://glenmaddern.com/articles/css-modules) for respective component
+- `service.js`: exports [`feathers`](http://feathersjs.com) service (recommended to use [`feathers-knex`](https://github.com/feathersjs/feathers-knex) and [`feathers-tcomb`](https://github.com/ahdinosaur/feathers-tcomb))
+- `client.js`: exports [`feathers-client`](https://github.com/feathersjs/feathers-client)
