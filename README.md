@@ -9,7 +9,7 @@ real-world, production-quality stack for [Craftworks](http://craftworks.enspiral
 - task runner: [npm scripts](http://substack.net/task_automation_with_npm_run)
 - client bundler: [browserify](https://github.com/substack/browserify-handbook)
   - es6/jsx transform: [babelify](https://www.npmjs.com/package/babelify)
-  - css transform: [sheetify](https://www.npmjs.com/package/sheetify)
+  - css transform: [cssify](https://www.npmjs.com/package/cssify) and [css-modules-require-hook](https://www.npmjs.com/package/css-modules-require-hook)
   - configuration: [evalify](https://www.npmjs.org/package/evalify)
   - bulk require: [bulkify](https://www.npmjs.org/package/bulkify)
 - utility functions: [ramda](http://ramdajs.com/docs/)
