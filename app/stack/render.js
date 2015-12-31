@@ -37,7 +37,13 @@ function createRender (config) {
             <RoutingContext { ...renderProps } />
           </Provider>
 
-          const innerHtml = renderToString(component)
+          var innerHtml
+          try {
+            innerHtml = renderToString(component)
+          } catch (err) {
+            res.setHeader('content-type', 'text/plain')
+            res.status(500).send(err.stack)
+          }
 
           const html = renderFullPage(innerHtml, store.getState())
 
