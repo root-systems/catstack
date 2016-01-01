@@ -4,7 +4,7 @@ const nodeEnv = env.NODE_ENV
 
 module.exports = {
   static: {
-    root: join(__dirname, '..', 'assets')
+    root: join(__dirname, '..', 'build')
   },
   port: env.PORT || 5000
 }
