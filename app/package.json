@@ -1,15 +1,19 @@
 {
   "browser": {
-    "./api.js": "./clients/index.js",
-    "./config.js": "./config-browser.js"
+    "./api.js": "./clients/index.js"
   },
   "browserify": {
     "transform": [
       ["cssify", { "modules": true } ],
       "babelify",
       "envify",
-      ["evalify", { "files": [ "config-browser.js" ] } ],
       "bulkify"
+    ]
+  },
+  "rc": {
+    "files": [
+      "../config/${NODE_ENV}",
+      "../config"
     ]
   }
 }
