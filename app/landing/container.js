@@ -1,7 +1,7 @@
-const React = require('react')
-const { connect } = require('react-redux')
+import React from 'react'
+import { connect } from 'react-redux'
 
-const Landing = require('./component')
+import Landing from './component'
 
 class LandingContainer extends React.Component {
   render () {
@@ -9,6 +9,6 @@ class LandingContainer extends React.Component {
   }
 }
 
-module.exports = connect(
+export default connect(
   (state) => ({})
 )(LandingContainer)

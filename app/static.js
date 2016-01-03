@@ -1,8 +1,6 @@
-const http = require('http')
+import http from 'http'
 
-module.exports = createStatic
-
-function createStatic (config) {
+export default function createStatic (config) {
   const ecstatic = config.livereload ?
     require('ecstatic-lr') : require('ecstatic')
 

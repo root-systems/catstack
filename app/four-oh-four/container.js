@@ -1,5 +1,5 @@
-const React = require('react')
-const { connect } = require('react-redux')
+import React from 'react'
+import { connect } from 'react-redux'
 
 class FourOhFourContainer extends React.Component {
   render () {
@@ -9,6 +9,6 @@ class FourOhFourContainer extends React.Component {
   }
 }
 
-module.exports = connect(
+export default connect(
   (state) => ({})
 )(FourOhFourContainer)

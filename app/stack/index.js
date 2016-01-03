@@ -1,5 +1,5 @@
-const feathers = require('feathers')
-const { mapObjIndexed, reduce, toPairs } = require('ramda')
+import feathers from 'feathers'
+import { mapObjIndexed, reduce, toPairs } from 'ramda'
 
 const stackCreators = {
   services: require('./services'),
@@ -7,9 +7,7 @@ const stackCreators = {
   render: require('./render')
 }
 
-module.exports = createStack
-
-function createStack(config) {
+export default function createStack(config) {
   const stacks = createStacks(config)
 
   const app = feathers()

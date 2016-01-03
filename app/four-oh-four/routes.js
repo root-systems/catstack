@@ -1,6 +1,6 @@
-const React = require('react')
-const { Route } = require('react-router')
+import React from 'react'
+import { Route } from 'react-router'
 
-const FourOhFourContainer = require('./container')
+import FourOhFourContainer from './container'
 
-module.exports = <Route path="*" component={FourOhFourContainer} />
+export default <Route path="*" component={FourOhFourContainer} />

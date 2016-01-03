@@ -1,10 +1,8 @@
 // https://github.com/jlongster/react-redux-universal-hot-example/blob/master/src/helpers/fetchAllData.js
 
-const Promise = require('pinkie-promise')
+import Promise from 'pinkie-promise'
 
-module.exports = fetchAllData
-
-function fetchAllData(components, getState, dispatch, location, params) {
+export default function fetchAllData(components, getState, dispatch, location, params) {
   const fetchers = components
     .filter((component) => !!component) // Weed out 'undefined' routes
     .filter((component) => component.fetchData) // only look at ones with a static fetchData()

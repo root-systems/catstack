@@ -1,6 +1,6 @@
-const React = require('react')
-const { Route } = require('react-router')
+import React from 'react'
+import { Route } from 'react-router'
 
-const TodosContainer = require('./container')
+import TodosContainer from './container'
 
-module.exports = <Route path="todos" component={TodosContainer} />
+export default <Route path="todos" component={TodosContainer} />

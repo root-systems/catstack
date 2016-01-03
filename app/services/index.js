@@ -1,10 +1,13 @@
 const bulk = require('bulk-require')
-const { map } = require('ramda')
+import { map } from 'ramda'
 
-module.exports = {
-  ...bulk(__dirname, '*/service.js'),
+export default {
   ...map(
-    (module) => module.services,
+    (module) => m.service.default,
+    bulk(__dirname, '*/service.js')
+  ),
+  ...map(
+    (module) => module.services.map(m => m.default),
     bulk(__dirname, '*/services/*.js')
   )
 }

@@ -1,5 +1,7 @@
-const config = require('app/config')
-const createStatic = require('app/static')
+require('babel-core/register')
+
+const config = require('app/config').default
+const createStatic = require('app/static').default
 const Url = require('url')
 
 const server = createStatic(config)

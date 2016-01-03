@@ -1,17 +1,17 @@
-const React = require('react')
-const { Route, IndexRoute } = require('react-router')
 const bulk = require('bulk-require')
-const { mapObjIndexed, values } = require('ramda')
+import React from 'react'
+import { Route, IndexRoute } from 'react-router'
+import { mapObjIndexed, values } from 'ramda'
 
-const LayoutContainer = require('app/layout/container')
-const FourOhFourRoutes = require('app/four-oh-four/routes')
+import LayoutContainer from 'app/layout/container'
+import FourOhFourRoutes from 'app/four-oh-four/routes'
 
-const routes = (
+export default (
   <Route path='/' component={LayoutContainer}>
     { 
       values(mapObjIndexed(
         (module, moduleName) => ({
-          ...module.routes,
+          ...module.routes.default,
           key: moduleName
         }),
         bulk(__dirname, '!(four-oh-four)/routes.js')
@@ -20,5 +20,3 @@ const routes = (
     { FourOhFourRoutes }
   </Route>
 )
-
-module.exports = routes

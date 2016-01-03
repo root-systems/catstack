@@ -1,1 +1,3 @@
-module.exports = require('simple-rc')()
+import getConfig from 'simple-rc'
+
+export default getConfig()

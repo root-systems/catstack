@@ -1,23 +1,21 @@
 // https://github.com/jlongster/react-redux-universal-hot-example/blob/master/src/server.js
 
-const http =require('http')
-const Url = require('url')
-const React = require('react')
-const { renderToString } = require('react-dom/server')
-const { Provider } = require('react-redux')
-const { createHistory } = require('history')
-const { Router, RoutingContext, match } = require('react-router')
-const sendHtml = require('send-data/html')
-const sendError = require('send-data/error')
-const redirect = require('predirect')
+import http from 'http'
+import Url from 'url'
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+import { Provider } from 'react-redux'
+import { createHistory } from 'history'
+import { Router, RoutingContext, match } from 'react-router'
+import sendHtml from 'send-data/html'
+import sendError from 'send-data/error'
+import redirect from 'predirect'
 
-const createStore = require('app/store')
-const routes = require('app/routes')
-const fetchAllData = require('app/util/fetch-all-data')
+import createStore from 'app/store'
+import routes from 'app/routes'
+import fetchAllData from 'app/util/fetch-all-data'
 
-module.exports = createRender
-
-function createRender (config) {
+export default function createRender (config) {
   const staticUrl = Url.format(config.static.url)
 
   return http.createServer(render)

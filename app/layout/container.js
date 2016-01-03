@@ -1,5 +1,5 @@
-const React = require('react')
-const { connect } = require('react-redux')
+import React from 'react'
+import { connect } from 'react-redux'
 
 class LayoutContainer extends React.Component {
   render () {
@@ -12,6 +12,6 @@ class LayoutContainer extends React.Component {
   }
 }
 
-module.exports = connect(
+export default connect(
   (state) => ({})
 )(LayoutContainer)

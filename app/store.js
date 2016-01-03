@@ -1,8 +1,13 @@
-const { createStore, compose, applyMiddleware } = require('redux')
-const thunk = require('redux-thunk')
-const { createHistory } = require('history')
+import { createStore, compose, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import { createHistory } from 'history'
 
-const reducer = require('app/reducer')
+import reducer from 'app/reducer'
+
+if (process.env.NODE_ENV === 'development') {
+  var logger = require('redux-logger')
+  var DevTools = require('app/dev/tools').default
+}
 
 let storeEnhancers  = []
 let middleware = []
@@ -14,12 +19,10 @@ storeEnhancers.push(
 )
 
 if (process.env.NODE_ENV === 'development') {
-  let logger = require('redux-logger')
   storeEnhancers.push(
     applyMiddleware(logger())
   )
 
-  let DevTools = require('app/dev/tools')
   storeEnhancers.push(DevTools.instrument())
 
   if (module.browser) {
@@ -36,7 +39,8 @@ const createEnhancedStore = compose(
   ...storeEnhancers
 )(createStore)
 
-function finalCreateStore(initialState) {
+export default function finalCreateStore(initialState) {
+  const store = createEnhancedStore(reducer, initialState)
 
   if (module.hot) {
     module.hot.accept('app/reducer', () => {
@@ -44,7 +48,5 @@ function finalCreateStore(initialState) {
     })
   }
 
-  return createEnhancedStore(reducer, initialState)
+  return store
 }
-
-module.exports = finalCreateStore

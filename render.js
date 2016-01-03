@@ -1,8 +1,8 @@
 require('babel-core/register')
 require('css-modules-require-hook')
 
-const config = require('app/config')
-const createRender = require('app/render')
+const config = require('app/config').default
+const createRender = require('app/render').default
 const Url = require('url')
 
 const server = createRender(config)

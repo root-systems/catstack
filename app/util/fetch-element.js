@@ -1,8 +1,6 @@
-const React = require('react')
+import React from 'react'
 
-module.exports = fetchElement
-
-function fetchElement (Component, props) {
+export default function fetchElement (Component, props) {
   if (Component.fetchData) {
     Component.fetchData(
       store.getState, store.dispatch,

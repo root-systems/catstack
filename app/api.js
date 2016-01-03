@@ -1,12 +1,10 @@
-const feathers = require('feathers')
-const { mapObjIndexed, reduce, toPairs } = require('ramda')
+import feathers from 'feathers'
+import { mapObjIndexed, reduce, toPairs } from 'ramda'
 
-const services = require('app/services')
-const config = require('app/config')
+import services from 'app/services'
+import config from 'app/config'
 
-module.exports = createServer
-
-function createServer (config) {
+export default function createServer (config) {
   const app = feathers()
 
   useAll(app, services)

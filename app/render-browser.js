@@ -1,15 +1,16 @@
-const React = require('react')
-const { render } = require('react-dom')
-const { Provider } = require('react-redux')
-const { Router } = require('react-router')
-const { createHistory } = require('history')
-const { syncReduxAndRouter } = require('redux-simple-router')
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { Router } from 'react-router'
+import { createHistory } from 'history'
+import { syncReduxAndRouter } from 'redux-simple-router'
 
-const routes = require('app/routes')
-const createStore = require('app/store')
-const fetchElement = require('app/util/fetch-element')
+import routes from 'app/routes'
+import createStore from 'app/store'
+import fetchElement from 'app/util/fetch-element'
 
 if (process.env.NODE_ENV === 'development') {
+  var DevTools = require('app/dev/tools').default
 }
 
 const store = createStore(window.__data)
@@ -31,8 +32,6 @@ render(
 )
 
 if (process.env.NODE_ENV === 'development') {
-  const DevTools = require('app/dev/tools')
-
   render(
     <Provider store={store} key="provider">
       <div>

@@ -1,6 +1,6 @@
-const React = require('react')
-const { IndexRoute } = require('react-router')
+import React from 'react'
+import { IndexRoute } from 'react-router'
 
-const LandingContainer = require('./container')
+import LandingContainer from './container'
 
-module.exports = <IndexRoute component={LandingContainer} />
+export default <IndexRoute component={LandingContainer} />

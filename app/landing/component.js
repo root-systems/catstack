@@ -1,13 +1,11 @@
-const React = require('react')
+import React from 'react'
 
-const style = require('./style.css')
+import style from './style.css'
 
-class Landing extends React.Component {
+export default class Landing extends React.Component {
   render () {
     return <div className={style.container}>
       landing!
     </div>
   }
 }
-
-module.exports = Landing
