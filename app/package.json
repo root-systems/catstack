@@ -1,6 +1,7 @@
 {
   "browser": {
-    "./api.js": "./clients/index.js"
+    "./render.js": "./render-browser.js",
+    "./api.js": "./api-browser.js"
   },
   "browserify": {
     "transform": [
