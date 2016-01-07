@@ -1,11 +1,27 @@
+const bulk = require('bulk-require')
 import feathers from 'feathers'
-import { mapObjIndexed, reduce, toPairs } from 'ramda'
+import hooks from 'feathers-hooks'
+import rest from 'feathers-rest'
+import bodyParser from 'body-parser'
+import { map, mapObjIndexed, reduce, toPairs } from 'ramda'
 
-import services from 'app/services'
-import config from 'app/config'
+const services = {
+  ...map(
+    (module) => module.service.default,
+    bulk(__dirname, '*/service.js')
+  ),
+  ...map(
+    (module) => module.services.map(m => m.default),
+    bulk(__dirname, '*/services/*.js')
+  )
+}
 
 export default function createServer (config) {
   const app = feathers()
+    .configure(rest())
+    .configure(hooks())
+    .use(bodyParser.json())
+    .use(bodyParser.urlencoded({ extended: true }))
 
   useAll(app, services)
 
