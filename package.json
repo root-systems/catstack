@@ -21,7 +21,7 @@
     "prod:api": "node api",
     "prod:static": "node static",
     "dev": "NODE_ENV=development npm-run-all -p dev:*",
-    "prod": "NODE_ENV=production npm-run-all -s prod:*"
+    "prod": "NODE_ENV=production npm-run-all -p prod:*"
   },
   "repository": {
     "type": "git",
