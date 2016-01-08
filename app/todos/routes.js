@@ -1,6 +1,8 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { Route, IndexRoute } from 'react-router'
 
-import TodosContainer from './container'
+import IndexContainer from './containers/index'
 
-export default <Route path="todos" component={TodosContainer} />
+export default <Route path="todos">
+  <IndexRoute component={IndexContainer} />
+</Route>
