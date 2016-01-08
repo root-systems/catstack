@@ -108,3 +108,7 @@ or run [any other `knex` command] with `npm run knex -- [command] [args]`
 ## known issues
 
 - adding a new file won't always be noticed by `node-dev` or `watchify` due to usage of `bulk-require`). potential fix is to use `chokidar-cli` and some transform to watch for new files and re-run the script command
+
+## resources
+
+- [simplest redux example](https://github.com/jackielii/simplest-redux-example/blob/master/index.js)
