@@ -85,3 +85,14 @@ each module directory may contain any of:
 - `components/*.css`: exports [css modules](http://glenmaddern.com/articles/css-modules) for respective component
 - `service.js`: exports [`feathers`](http://feathersjs.com) service (recommended to use [`feathers-knex`](https://github.com/feathersjs/feathers-knex) and [`feathers-tcomb`](https://github.com/ahdinosaur/feathers-tcomb))
 - `client.js`: exports [`feathers-client`](https://github.com/feathersjs/feathers-client)
+
+### setup postgres database
+
+install `docker`
+
+- to install db, run `npm run pg:pull`
+- to create db, run `npm run pg:run`
+- to start db, run `npm run pg:start`
+- to stop db, run `npm run pg:stop`
+- to remove db, run `npm run pg:rm`
+- to show db logs, run `npm run pg:logs`
