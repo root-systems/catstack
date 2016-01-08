@@ -2,9 +2,16 @@ const join = require('path').join
 
 module.exports = {
   db: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-      filename: join(__dirname, '..', 'db.sqlite')
+      host     : 'localhost',
+      user     : 'postgres',
+      //password : 'postgres',
+      database : 'postgres'
+    },
+    pool: {
+      min: 0,
+      max: 1
     }
   }
 }
