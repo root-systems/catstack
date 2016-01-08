@@ -19,7 +19,7 @@ const history = createHistory()
 syncReduxAndRouter(history, store)
 
 const main = (
-  <Router createElement={fetchElement} history={history}>
+  <Router createElement={fetchElement(store)} history={history}>
     { routes }
   </Router>
 )
