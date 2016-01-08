@@ -15,7 +15,9 @@ import createStore from 'app/store'
 import routes from 'app/routes'
 import fetchAllData from 'app/util/fetch-all-data'
 
-export default function createRender (config) {
+export default module.exports = createRender
+
+function createRender (config) {
   const staticUrl = Url.format(config.static.url)
 
   return http.createServer(render)
