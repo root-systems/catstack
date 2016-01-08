@@ -1,11 +1,5 @@
-export default function todos (state = {}, action) {
-  switch (action.type) {
-    case 'CREATE_TODO':
-      return {
-        ...state,
-        [action.payload.id]: action.payload
-      }
-    default:
-      return state
-  }
-}
+import { createReducer } from 'feathers-action'
+
+import { Todos } from './models'
+
+export default createReducer(Todos)
