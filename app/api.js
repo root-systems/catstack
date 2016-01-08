@@ -3,6 +3,7 @@ import feathers from 'feathers'
 import hooks from 'feathers-hooks'
 import rest from 'feathers-rest'
 import bodyParser from 'body-parser'
+import cors from 'cors'
 import { map, mapObjIndexed, reduce, toPairs } from 'ramda'
 
 import memory from 'feathers-memory'
@@ -22,6 +23,7 @@ export default module.exports = createApi
 
 function createApi (config) {
   const app = feathers()
+    .use(cors())
     .configure(rest())
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({ extended: true }))

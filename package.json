@@ -92,6 +92,7 @@
     "browserify": "github:ahdinosaur/node-browserify",
     "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
+    "cors": "^2.7.1",
     "cpx": "^1.2.1",
     "css-modules-require-hook": "^2.1.0",
     "cssify": "github:ahdinosaur/cssify",
