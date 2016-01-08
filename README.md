@@ -10,8 +10,8 @@ real-world, production-quality stack for [Craftworks](http://craftworks.enspiral
 - client bundler: [browserify](https://github.com/substack/browserify-handbook)
   - es6/jsx transform: [babelify](https://www.npmjs.com/package/babelify)
   - css transform: [cssify](https://www.npmjs.com/package/cssify) and [css-modules-require-hook](https://www.npmjs.com/package/css-modules-require-hook)
-  - configuration: [evalify](https://www.npmjs.org/package/evalify)
   - bulk require: [bulkify](https://www.npmjs.org/package/bulkify)
+- configuration: [simple-rc](https://www.npmjs.org/package/simple-rc)
 - utility functions: [ramda](http://ramdajs.com/docs/)
 - directory structure:
   - `/config/`
@@ -96,3 +96,15 @@ install `docker`
 - to stop db, run `npm run pg:stop`
 - to remove db, run `npm run pg:rm`
 - to show db logs, run `npm run pg:logs`
+
+run latest migrations with
+
+```shell
+npm run knex -- migrate:latest
+```
+
+or run [any other `knex` command] with `npm run knex -- [command] [args]`
+
+## known issues
+
+- adding a new file won't always be noticed by `node-dev` or `watchify` due to usage of `bulk-require`). potential fix is to use `chokidar-cli` and some transform to watch for new files and re-run the script command
