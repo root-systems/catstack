@@ -6,7 +6,7 @@ import reducer from 'app/reducer'
 
 if (process.env.NODE_ENV === 'development') {
   var logger = require('redux-logger')
-  var DevTools = require('app/dev/tools').default
+  var DevTools = require('app/util/dev-tools').default
 }
 
 let storeEnhancers  = []

@@ -10,7 +10,7 @@ import createStore from 'app/store'
 import fetchElement from 'app/util/fetch-element'
 
 if (process.env.NODE_ENV === 'development') {
-  var DevTools = require('app/dev/tools').default
+  var DevTools = require('app/util/dev-tools').default
 }
 
 const store = createStore(window.__data)
