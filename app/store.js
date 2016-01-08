@@ -19,7 +19,7 @@ storeEnhancers.push(
 )
 
 if (process.env.NODE_ENV === 'development') {
-  if (module.browser) {
+  if (process.browser) {
     storeEnhancers.push(
       applyMiddleware(logger())
     )
