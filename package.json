@@ -98,7 +98,7 @@
     "cssify": "github:ahdinosaur/cssify",
     "ecstatic": "^1.4.0",
     "envify": "^3.4.0",
-    "evalify": "^1.0.1",
+    "evalify": "github:ahdinosaur/evalify#minimatch",
     "feathers": "^2.0.0-pre.1",
     "feathers-hooks": "^0.5.1",
     "feathers-knex": "^2.0.0",
