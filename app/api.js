@@ -16,7 +16,9 @@ const services = {
   )
 }
 
-export default function createServer (config) {
+export default module.exports = createApi
+
+function createApi (config) {
   const app = feathers()
     .configure(rest())
     .configure(hooks())

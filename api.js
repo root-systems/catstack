@@ -1,7 +1,7 @@
 require('babel-core/register')
 
-const config = require('app/config').default
-const createApi = require('app/api').default
+const config = require('app/config')
+const createApi = require('app/api')
 const Url = require('url')
 
 const server = createApi(config)
