@@ -1,12 +1,10 @@
-import knexService from 'feathers-knex'
 import validate from 'feathers-tcomb'
 
-import db from 'app/db'
+import service from 'app/service'
 
 import { Todo } from './models'
 
-export default knexService({
-  Model: db,
+export default service({
   name: 'todos'
 })
 //.extend({
