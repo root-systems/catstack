@@ -7,9 +7,9 @@
     "postinstall": "lnfs app node_modules/app",
     "lint": "snazzy",
     "format": "snazzy --format",
-    "test": "npm-run-all -p test:*",
+    "test": "NODE_ENV=test npm-run-all -p test:*",
     "test:spec": "ava",
-    "test:feature": "node app/features",
+    "test:feature": "cucumber-js",
     "pg:pull": "docker pull postgres",
     "pg:run": "docker run -d -p 5432:5432 --name=business-postgres postgres",
     "pg:start": "docker start business-postgres",
@@ -28,7 +28,7 @@
     "prod:api": "node api",
     "prod:static": "node static",
     "dev": "NODE_ENV=development npm-run-all -p dev:*",
-    "prod": "NODE_ENV=production npm-run-all -p prod:*"
+    "prod": "NODE_ENV=production npm-run-all prod:render-browser prod:assets -p prod:render-node prod:api prod:static"
   },
   "ava": {
     "files": [
@@ -66,12 +66,12 @@
     "ava": "github:sindresorhus/ava#16c7282e97c9ab671bc1d56920fd3fb125a65eab",
     "babel-plugin-react-transform": "^2.0.0",
     "browserify-hmr": "^0.3.1",
+    "cucumber": "^0.9.2",
     "cuke-tap": "^1.0.2",
     "ecstatic-lr": "^1.0.1",
     "feathers-memory": "^0.5.1",
     "garnish": "^5.0.1",
     "multi-glob": "^1.0.1",
-    "jsdom": "^7.1.0",
     "node-dev": "^2.7.1",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
@@ -83,7 +83,8 @@
     "run-parallel": "^1.1.4",
     "tape": "^4.4.0",
     "watchify": "^3.6.1",
-    "wtch": "^4.0.1"
+    "wtch": "^4.0.1",
+    "zombie": "^4.2.1"
   },
   "dependencies": {
     "babel-core": "^6.2.1",
