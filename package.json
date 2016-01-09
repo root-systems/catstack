@@ -8,7 +8,7 @@
     "lint": "snazzy",
     "format": "snazzy --format",
     "test": "npm-run-all -p test:*",
-    "test:spec": "node app/spec",
+    "test:spec": "ava",
     "test:feature": "node app/features",
     "pg:pull": "docker pull postgres",
     "pg:run": "docker run -d -p 5432:5432 --name=business-postgres postgres",
@@ -29,6 +29,11 @@
     "prod:static": "node static",
     "dev": "NODE_ENV=development npm-run-all -p dev:*",
     "prod": "NODE_ENV=production npm-run-all -p prod:*"
+  },
+  "ava": {
+    "files": [
+      "**/*.spec.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -58,14 +63,14 @@
     "npm": "^3.0.0"
   },
   "devDependencies": {
-    "ava": "^0.8.0",
+    "ava": "github:sindresorhus/ava#16c7282e97c9ab671bc1d56920fd3fb125a65eab",
     "babel-plugin-react-transform": "^2.0.0",
     "browserify-hmr": "^0.3.1",
     "cuke-tap": "^1.0.2",
     "ecstatic-lr": "^1.0.1",
     "feathers-memory": "^0.5.1",
     "garnish": "^5.0.1",
-    "glob": "^6.0.2",
+    "multi-glob": "^1.0.1",
     "jsdom": "^7.1.0",
     "node-dev": "^2.7.1",
     "react-transform-catch-errors": "^1.0.0",
