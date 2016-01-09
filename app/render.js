@@ -15,9 +15,7 @@ import createStore from 'app/store'
 import routes from 'app/routes'
 import fetchAllData from 'app/util/fetch-all-data'
 
-export default module.exports = createRender
-
-function createRender (config) {
+export function createServer (config) {
   const staticUrl = Url.format(config.static.url)
 
   return http.createServer(render)
@@ -45,7 +43,7 @@ function createRender (config) {
           renderProps.location,
           renderProps.params
         ).then(function () {
-          const component = <Provider store={store} key="provider">
+          const component = <Provider store={store}>
             <RoutingContext { ...renderProps } />
           </Provider>
 

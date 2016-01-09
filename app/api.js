@@ -1,12 +1,11 @@
 const bulk = require('bulk-require')
-import feathers from 'feathers'
+import http from 'http'
+import Server from 'feathers'
 import hooks from 'feathers-hooks'
 import rest from 'feathers-rest'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import { map, mapObjIndexed, reduce, toPairs } from 'ramda'
-
-import memory from 'feathers-memory'
 
 const services = Object.assign(
   map(
@@ -19,19 +18,17 @@ const services = Object.assign(
   )
 )
 
-export default module.exports = createApi
-
-function createApi (config) {
-  const app = feathers()
+export function createServer (config) {
+  const server = Server()
     .use(cors())
     .configure(rest())
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({ extended: true }))
     .configure(hooks())
 
-  useAll(app, services)
+  useAll(server, services)
 
-  return app
+  return http.createServer(server)
 }
 
 function useAll (app, services) {

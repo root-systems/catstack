@@ -1,6 +1,6 @@
 import http from 'http'
 
-export default module.exports = function createStatic (config) {
+export function createServer (config) {
   const ecstatic = config.livereload ?
     require('ecstatic-lr') : require('ecstatic')
 

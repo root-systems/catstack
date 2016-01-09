@@ -1,10 +1,10 @@
 require('babel-core/register')
 
 const config = require('app/config')
-const createStatic = require('app/static')
+const createServer = require('app/static').createServer
 const Url = require('url')
 
-const server = createStatic(config)
+const server = createServer(config)
 
 server.listen(config.static.url.port, function () {
   const staticUrl = Url.format(config.static.url)
