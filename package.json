@@ -8,7 +8,7 @@
     "lint": "snazzy",
     "format": "snazzy --format",
     "test": "NODE_ENV=test npm-run-all -p test:*",
-    "test:spec": "ava",
+    "test:spec": "ava -r babel-core/register",
     "test:feature": "cucumber-js",
     "pg:pull": "docker pull postgres",
     "pg:run": "docker run -d -p 5432:5432 --name=business-postgres postgres",
@@ -31,6 +31,7 @@
     "prod": "NODE_ENV=production npm-run-all prod:render-browser prod:assets -p prod:render-node prod:api prod:static"
   },
   "ava": {
+    "cache": false,
     "files": [
       "**/*.spec.js"
     ]
