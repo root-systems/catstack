@@ -12,7 +12,7 @@ real-world, production-quality stack for [Craftworks](http://craftworks.enspiral
   - css transform: [cssify](https://www.npmjs.com/package/cssify) and [css-modules-require-hook](https://www.npmjs.com/package/css-modules-require-hook)
   - bulk require: [bulkify](https://www.npmjs.org/package/bulkify)
 - configuration: [simple-rc](https://www.npmjs.org/package/simple-rc)
-- utility functions: [ramda](http://ramdajs.com/docs/)
+- utility functions: [lodash](https://lodash.com/docs/)
 - data model: [tcomb](https://github.com/gcanti/tcomb)
 - database: [knex](https://www.npmjs.com/package/knex)
 - api service: [feathers-knex](https://www.npmjs.com/package/feathers-knex)

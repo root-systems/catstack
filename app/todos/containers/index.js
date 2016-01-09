@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { map, values } from 'ramda'
+import { map } from 'lodash'
 
 import actions from '../actions'
 import TodoList from '../components/todo-list'
@@ -14,9 +14,9 @@ class TodosContainer extends React.Component {
   render () {
     return <TodoList>
       {
-        values(map(todo => {
+        map(this.props.todos, todo => {
           return <Todo todo={todo} />
-        }, this.props.todos))
+        })
       }
     </TodoList>
   }

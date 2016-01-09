@@ -1,18 +1,32 @@
 const bulk = require('bulk-require')
 import { combineReducers } from 'redux'
 import { routeReducer } from 'redux-simple-router'
-import { map } from 'ramda'
+import { map, mapValues, assign, camelCase, mapKeys } from 'lodash'
 
-export default combineReducers({
-  ...map(
-    (module) => module.reducer.default,
-    bulk(__dirname, '*/reducer.js')
+export default combine(assign(
+  mapValues(
+    bulk(__dirname, '*/reducer.js'),
+    (module) => module.reducer.default
   ),
-  ...map(
-    (module) => combineReducers(
-      module.reducers.map(m => m.default)
-    ),
-    bulk(__dirname, '*/reducers/*.js')
+  mapValues(
+    bulk(__dirname, '*/reducers/*.js'),
+    (module) => combine(
+      mapValues(
+        module.reducers,
+        m => m.default
+      )
+    )
   ),
-  routing: routeReducer
-})
+  {
+    routing: routeReducer
+  }
+))
+
+function combine (reducers) {
+  return combineReducers(
+    mapKeys(
+      reducers,
+      (reducer, name) => camelCase(name)
+    )
+  )
+}

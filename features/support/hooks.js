@@ -1,38 +1,38 @@
 require('babel-core/register')
 require('css-modules-require-hook')
 
-const R = require('ramda')
+const _ = require('lodash')
 const parallel = require('run-parallel')
 
 const config = require('app/config')
 
 module.exports = function () {
-  const servers = R.map(function (module) {
-    return module.createServer(config)
-  }, {
+  const servers = _.mapValues({
     static: require('app/static'),
     api: require('app/api'),
     render: require('app/render')
+  }, function (module) {
+    return module.createServer(config)
   })
 
   function start (cb) {
     parallel(
-      R.values(R.mapObjIndexed(function (server, name) {
+      _.map(servers, function (server, name) {
         return function (callback) {
           server.listen(config[name].url.port, callback)
         }
-      }, servers)),
+      }),
       cb
     )
   }
   
   function close (cb) {
     parallel(
-      R.values(R.mapObjIndexed(function (server, name) {
+      _.map(servers, function (server, name) {
         return function (callback) {
           server.close(callback)
         }
-      }, servers)),
+      }),
       cb
     )
   }
