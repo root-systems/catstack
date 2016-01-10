@@ -59,8 +59,9 @@ real-world, production-quality stack for [Craftworks](http://craftworks.enspiral
 - [test](#test)
 - [lint](#lint)
 - [format](#format)
-- [shrinkwrap](#shrinkwrap)
-- [webpack-rails](#webpack-rails)
+- [database](#database)
+  - [pg](#pg)
+  - [knex](#knex)
 
 ### install
 
@@ -68,7 +69,9 @@ real-world, production-quality stack for [Craftworks](http://craftworks.enspiral
 npm install
 ```
 
-### dev
+### start
+
+#### dev
 
 starts development environment
 
@@ -76,7 +79,7 @@ starts development environment
 npm run dev
 ```
 
-### prod
+#### prod
 
 starts production environment
 
