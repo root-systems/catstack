@@ -5,6 +5,7 @@ import { map } from 'lodash'
 import actions from '../actions'
 import TodoList from '../components/todo-list'
 import Todo from '../components/todo'
+import { getIndexProps } from '../getters'
 
 class TodosContainer extends React.Component {
   static fetchData = (getState, dispatch, location, params) => {
@@ -23,7 +24,5 @@ class TodosContainer extends React.Component {
 }
 
 export default connect(
-  (state) => ({
-    todos: state.todos.records
-  })
+  getIndexProps
 )(TodosContainer)

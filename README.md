@@ -217,6 +217,36 @@ each module directory may contain any of:
 
 ## FAQ
 
+### how do i do relations between models?
+
+implement them in your `getters.js` file as selectors.
+
+```js
+// app/groups/getter.js
+import { createSelector } from 'reselect'
+import { getMemberships } from 'app/memberships/getters'
+
+export const getGroups = (state) => state.groups
+
+export const getMembersByGroupId = createSelector (
+  getGroups,
+  getMemberships,
+  (groups, memberships) => {
+    const isInGroup = (group) => (membership) => {
+      return group.id === membership.groupId
+    }
+
+    return Object.values(groups).map((group) => {
+      return Object.values(memberships)
+        .filter(isInGroup(group))
+        .map((membership) => membership.memberId)
+    })
+  }
+)
+```
+
+in the future, we should extract common relations into helper creators.
+
 ### how to set default props
 
 ```jsx
