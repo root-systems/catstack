@@ -1,5 +1,7 @@
 import React from 'react'
 
+import style from './todo.css'
+
 export default class TodoList extends React.Component {
   render () {
     return <ul>
