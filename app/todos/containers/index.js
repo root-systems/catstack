@@ -9,7 +9,7 @@ import Todo from '../components/todo'
 class TodosContainer extends React.Component {
   static fetchData = (getState, dispatch, location, params) => {
     return dispatch(actions.find())
-  }
+  };
 
   render () {
     return <TodoList>
