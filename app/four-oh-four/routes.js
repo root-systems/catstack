@@ -3,4 +3,6 @@ import { Route } from 'react-router'
 
 import FourOhFourContainer from './container'
 
-export default <Route path="*" component={FourOhFourContainer} />
+export default function (store) {
+  return <Route path="*" component={FourOhFourContainer} />
+}

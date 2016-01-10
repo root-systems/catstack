@@ -5,7 +5,7 @@ import { Router } from 'react-router'
 import { createHistory } from 'history'
 import { syncReduxAndRouter } from 'redux-simple-router'
 
-import routes from 'app/routes'
+import createRoutes from 'app/routes'
 import createStore from 'app/store'
 import fetchElement from 'app/util/fetch-element'
 
@@ -20,7 +20,7 @@ syncReduxAndRouter(history, store)
 
 const main = (
   <Router createElement={fetchElement(store)} history={history}>
-    { routes }
+    { createRoutes(store) }
   </Router>
 )
 

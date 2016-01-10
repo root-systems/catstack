@@ -3,4 +3,6 @@ import { IndexRoute } from 'react-router'
 
 import LandingContainer from './container'
 
-export default <IndexRoute component={LandingContainer} />
+export default function (store) {
+  return <IndexRoute component={LandingContainer} />
+}

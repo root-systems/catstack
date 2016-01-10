@@ -208,7 +208,7 @@ each module directory may contain any of:
 - `constants.js`: exports constants (such as [redux action types](https://www.npmjs.com/package/create-action-types))
 - `actions.js`: exports [redux actions](https://www.npmjs.com/package/redux-actions) (recommended to use [`feathers-action`](https://npmjs.com/package/feathers-action))
 - `reducer.js`: exports [redux reducer](http://redux.js.org/docs/basics/Reducers.html) (recommended to use [`feathers-action`](https://npmjs.com/package/feathers-action))
-- `routes.js`: exports [`<ReactRouter.Route />`](https://www.npmjs.com/package/react-router)
+- `routes.js`: exports [`function (store) { return <ReactRouter.Route /> }`](https://www.npmjs.com/package/react-router)
 - `getters.js`: exports [`reselect`](https://www.npmjs.com/package/reselect) getters for use in containers' `connect`
 - `containers/*.js`: exports [smart component](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) [`connect`](https://github.com/rackt/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)ed with [`react-redux`](https://www.npmjs.com/package/react-redux)
 - `components/*.js`: exports [dumb component](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)

@@ -12,7 +12,7 @@ import sendError from 'send-data/error'
 import redirect from 'predirect'
 
 import createStore from 'app/store'
-import routes from 'app/routes'
+import createRoutes from 'app/routes'
 import fetchAllData from 'app/util/fetch-all-data'
 
 export function createServer (config) {
@@ -24,7 +24,7 @@ export function createServer (config) {
     const store = createStore()
 
     match({
-      routes: routes,
+      routes: createRoutes(store),
       location: req.url
     }, function (err, redirectLocation, renderProps) {
       if (redirectLocation) {
