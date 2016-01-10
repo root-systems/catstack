@@ -14,8 +14,8 @@ class TodosContainer extends React.Component {
   render () {
     return <TodoList>
       {
-        map(this.props.todos, todo => {
-          return <Todo todo={todo} />
+        map(this.props.todos, (todo, todoKey) => {
+          return <Todo key={todoKey} todo={todo} />
         })
       }
     </TodoList>
