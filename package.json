@@ -99,6 +99,7 @@
     "babel-preset-react": "^6.1.18",
     "babel-runtime": "^6.2.0",
     "babelify": "^7.2.0",
+    "body-parser": "^1.14.2",
     "browserify": "github:ahdinosaur/node-browserify",
     "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
