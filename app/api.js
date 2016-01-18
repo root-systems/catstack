@@ -35,6 +35,9 @@ export function createServer (config) {
 
   useAll(app, services)
 
+  // must call app.setup() because not calling app.listen()
+  app.setup()
+
   return http.createServer(app)
 }
 
