@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import { createHistory } from 'history'
+import { syncHistory } from 'redux-simple-router'
 
 import reducer from 'app/reducer'
 
@@ -14,15 +14,9 @@ let middleware = []
 
 middleware.push(thunk)
 
-storeEnhancers.push(
-  applyMiddleware(...middleware)
-)
-
 if (process.env.NODE_ENV === 'development') {
   if (process.browser) {
-    storeEnhancers.push(
-      applyMiddleware(logger())
-    )
+    middleware.push(logger())
   }
 
   storeEnhancers.push(DevTools.instrument())
@@ -37,12 +31,23 @@ if (process.env.NODE_ENV === 'development') {
   }
 }
 
-const createEnhancedStore = compose(
-  ...storeEnhancers
-)(createStore)
+export default function finalCreateStore(initialState, history) {
+  const historyMiddleware = syncHistory(history)
 
-export default function finalCreateStore(initialState) {
+  const finalMiddleware = middleware.concat([
+    historyMiddleware
+  ])
+
+  const createEnhancedStore = compose(
+    applyMiddleware(...finalMiddleware),
+    ...storeEnhancers
+  )(createStore)
+
   const store = createEnhancedStore(reducer, initialState)
+
+  if (process.env.NODE_ENV === 'development') {
+    historyMiddleware.listenForReplays(store)
+  }
 
   if (module.hot) {
     module.hot.accept('app/reducer', () => {

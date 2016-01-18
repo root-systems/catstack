@@ -1,8 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { Router } from 'react-router'
-import { createHistory } from 'history'
+import { browserHistory as history, Router } from 'react-router'
 import { syncReduxAndRouter } from 'redux-simple-router'
 
 import createRoutes from 'app/routes'
@@ -13,10 +12,7 @@ if (process.env.NODE_ENV === 'development') {
   var DevTools = require('app/util/dev-tools').default
 }
 
-const store = createStore(window.__data)
-const history = createHistory()
-
-syncReduxAndRouter(history, store)
+const store = createStore(window.__data, history)
 
 const main = (
   <Router createElement={fetchElement(store)} history={history}>

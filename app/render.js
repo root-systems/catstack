@@ -5,8 +5,7 @@ import Url from 'url'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
-import { createHistory } from 'history'
-import { Router, RoutingContext, match } from 'react-router'
+import { Router, RouterContext, match, createMemoryHistory as createHistory  } from 'react-router'
 import sendHtml from 'send-data/html'
 import sendError from 'send-data/error'
 import redirect from 'predirect'
@@ -21,7 +20,8 @@ export function createServer (config) {
   return http.createServer(render)
   
   function render (req, res) {
-    const store = createStore()
+    const history = createHistory()
+    const store = createStore(undefined, history)
 
     match({
       routes: createRoutes(store),
@@ -44,7 +44,7 @@ export function createServer (config) {
           renderProps.params
         ).then(function () {
           const component = <Provider store={store}>
-            <RoutingContext { ...renderProps } />
+            <RouterContext { ...renderProps } />
           </Provider>
 
           var innerHtml

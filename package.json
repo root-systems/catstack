@@ -117,7 +117,6 @@
     "feathers-knex": "^2.0.0",
     "feathers-rest": "^1.1.0",
     "feathers-tcomb": "^1.0.0",
-    "history": "^1.13.1",
     "isomorphic-fetch": "^2.2.1",
     "knex": "^0.9.0",
     "lnfs-cli": "^1.0.1",
