@@ -96,7 +96,7 @@
     "babel-plugin-transform-runtime": "^6.4.3",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
-    "babel-runtime": "^6.2.0",
+    "babel-runtime": "^6.3.19",
     "babelify": "^7.2.0",
     "body-parser": "^1.14.2",
     "browserify": "github:ahdinosaur/node-browserify",
