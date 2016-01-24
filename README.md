@@ -1,5 +1,94 @@
 # business-stack
 
+**in progress**
+
+an opinionated stack of modules to design, develop, deliver, and maintain business applications.
+
+## install
+
+with [npm](https://npmjs.com):
+
+```shell
+npm install --save business-stack
+```
+
+## example
+
+```js
+// app.js
+import bulkRequire from 'bulk-require'
+import Stack from 'business-stack'
+
+export default Stack({
+  router: require('./router'),
+  container: require('./container'),
+  routes: bulkRequire(__dirname, ['*/route']),
+  services: bulkRequire(__dirname, ['*/service']),
+  reducers: bulkRequire(__dirname, ['*/reducer']),
+  root: document.querySelector('main')
+})
+```
+
+```js
+// things/models.js
+import t from 'tcomb'
+
+export const Thing = t.struct({
+  name: t.String,
+  description: T.String
+}, 'Thing')
+
+export const Things = t.struct({
+  name: t.String,
+  description: T.String
+}, 'Things')
+```
+
+```js
+// things/service.js
+import { service } from 'business-stack'
+import { Things } from './models'
+
+export default service(Things)
+```
+
+```js
+// things/actions.js
+import { actions } from 'business-stack'
+import { Things } from './models'
+
+export default actions(Things)
+```
+
+```js
+// things/reducer.js
+import { reducer } from 'business-stack'
+import { Things } from './models'
+
+export default reducer(Things)
+```
+
+```js
+// things/routes.js
+import { Route } from 'react-router'
+import Index from './containers/index'
+
+export default (store) =>
+  <Route path="things">
+    <Route path="*" component={Index} />
+  </Route>
+```
+
+## usage
+
+### `App`
+
+### `#service`
+
+### `#actions`
+
+### `#reducer`
+
 ** work in progress **
 
 real-world, production-quality stack for [Craftworks](http://craftworks.enspiral.com)
@@ -17,7 +106,6 @@ real-world, production-quality stack for [Craftworks](http://craftworks.enspiral
 - [promise cookbook](https://github.com/mattdesl/promise-cookbook)
 - [approaches to testing react components](http://reactkungfu.com/2015/07/approaches-to-testing-react-components-an-overview/)
 - [unit testing react components without a dom](http://simonsmith.io/unit-testing-react-components-without-a-dom/)
-
 
 ## stack
 
