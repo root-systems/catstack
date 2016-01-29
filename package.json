@@ -76,7 +76,7 @@
     "feathers-memory": "^0.5.1",
     "garnish": "^5.0.1",
     "multi-glob": "^1.0.1",
-    "node-dev": "^2.7.1",
+    "node-dev": "^3.0.0",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.2.0",
