@@ -83,7 +83,7 @@
     "redux-devtools": "^3.0.0",
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.1",
-    "redux-logger": "^2.3.2",
+    "redux-logger": "^2.5.1",
     "run-parallel": "^1.1.4",
     "watchify": "^3.6.1",
     "wtch": "^4.0.1",
