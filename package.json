@@ -120,7 +120,7 @@
     "isomorphic-fetch": "^2.2.1",
     "knex": "^0.9.0",
     "lnfs-cli": "^1.0.1",
-    "lodash": "^4.0.0",
+    "lodash": "^4.3.0",
     "npm-run-all": "^1.5.0",
     "pg": "^4.4.3",
     "pinkie-promise": "^2.0.0",
