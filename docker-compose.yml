@@ -1,0 +1,19 @@
+render:
+  build: .
+  ports:
+    - "5000:5000",
+  volumes:
+    - .:/web
+static:
+  build: .
+  ports:
+    - "5001:5001",
+  volumes:
+    - .:/static
+api:
+  build: .
+  ports:
+    - "5002:5002",
+  volumes:
+    - .:/api
+- "5002:5002"
