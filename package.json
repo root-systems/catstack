@@ -27,8 +27,9 @@
     "prod:assets": "cpx \"app/assets/**/*\" build",
     "prod:api": "node api",
     "prod:static": "node static",
+    "prod:proxy": "node proxy",
     "dev": "NODE_ENV=development npm-run-all -p dev:*",
-    "prod": "NODE_ENV=production npm-run-all prod:render-browser prod:assets -p prod:render-node prod:api prod:static"
+    "prod": "NODE_ENV=production npm-run-all prod:render-browser prod:assets -p prod:render-node prod:api prod:static prod:proxy"
   },
   "ava": {
     "cache": false,
@@ -117,6 +118,7 @@
     "feathers-knex": "^2.1.0",
     "feathers-rest": "^1.2.2",
     "feathers-tcomb": "^1.0.0",
+    "http-proxy": "^1.13.1",
     "isomorphic-fetch": "^2.2.1",
     "knex": "^0.9.0",
     "lnfs-cli": "^1.0.1",

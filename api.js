@@ -6,7 +6,7 @@ const Url = require('url')
 
 const server = createServer(config)
 
-server.listen(config.api.url.port, function () {
+server.listen(config.api.port, function () {
   const apiUrl = Url.format(config.api.url)
-  console.log(`api server listening at ${apiUrl}`)
+  console.log(`api server at ${apiUrl}`)
 })

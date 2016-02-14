@@ -7,7 +7,7 @@ const Url = require('url')
 
 const server = createServer(config)
 
-server.listen(config.render.url.port, function () {
+server.listen(config.render.port, function () {
   const renderUrl = Url.format(config.render.url)
-  console.log(`render server listening at ${renderUrl}`)
+  console.log(`render server at ${renderUrl}`)
 })

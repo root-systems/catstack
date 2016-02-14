@@ -6,7 +6,7 @@ const Url = require('url')
 
 const server = createServer(config)
 
-server.listen(config.static.url.port, function () {
+server.listen(config.static.port, function () {
   const staticUrl = Url.format(config.static.url)
-  console.log(`static server listening at ${staticUrl}`)
+  console.log(`static server at ${staticUrl}`)
 })
