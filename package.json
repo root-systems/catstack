@@ -90,7 +90,7 @@
     "zombie": "^4.2.1"
   },
   "dependencies": {
-    "babel-core": "^6.2.1",
+    "babel-core": "^6.5.2",
     "babel-plugin-lodash": "^2.0.1",
     "babel-plugin-transform-class-properties": "^6.3.13",
     "babel-plugin-transform-object-rest-spread": "^6.1.18",
