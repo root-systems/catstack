@@ -121,7 +121,7 @@
     "feathers-tcomb": "^1.0.0",
     "http-proxy": "^1.13.1",
     "isomorphic-fetch": "^2.2.1",
-    "knex": "^0.9.0",
+    "knex": "^0.10.0",
     "lnfs-cli": "^1.0.1",
     "lodash": "^4.3.0",
     "npm-run-all": "^1.5.0",
