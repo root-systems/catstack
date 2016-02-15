@@ -2,7 +2,7 @@ const Browser = require('zombie')
 
 const config = require('app/config')
 
-Browser.localhost(config.render.url.hostname, config.render.url.port)
+Browser.localhost('localhost', config.proxy.port)
 
 function World () {
   // this.browser will be available in step definitions 
