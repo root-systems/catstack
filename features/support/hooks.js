@@ -10,7 +10,8 @@ module.exports = function () {
   const servers = _.mapValues({
     static: require('app/static'),
     api: require('app/api'),
-    render: require('app/render')
+    render: require('app/render'),
+    proxy: require('app/proxy')
   }, function (module) {
     return module.createServer(config)
   })
@@ -19,7 +20,7 @@ module.exports = function () {
     parallel(
       _.map(servers, function (server, name) {
         return function (callback) {
-          server.listen(config[name].url.port, callback)
+          server.listen(config[name].port, callback)
         }
       }),
       cb

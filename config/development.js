@@ -1,30 +1,36 @@
 const join = require('path').join
 
 module.exports = {
+  proxy: {
+    port: 5000
+  },
   render: {
     url: {
       protocol: 'http:',
       hostname: 'localhost',
+      pathname: '/',
       port: 5000
     },
-    port: 5000
+    port: 6000
   },
   static: {
     url: {
       protocol: 'http:',
       hostname: 'localhost',
-      port: 5001
+      pathname: '/static/',
+      port: 5000
     },
     root: join(__dirname, '..', 'build'),
-    port: 5001
+    port: 6001
   },
   api: {
     url: {
       protocol: 'http:',
       hostname: 'localhost',
-      port: 5002
+      pathname: '/api/',
+      port: 5000
     },
-    port: 5002
+    port: 6002
   },
   db: {
     client: 'pg',
