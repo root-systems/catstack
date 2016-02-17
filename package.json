@@ -119,7 +119,7 @@
     "feathers-knex": "^2.1.0",
     "feathers-rest": "^1.2.2",
     "feathers-tcomb": "^1.0.0",
-    "http-proxy": "^1.13.1",
+    "http-proxy": "^1.13.2",
     "isomorphic-fetch": "^2.2.1",
     "knex": "^0.10.0",
     "lnfs-cli": "^1.0.1",
