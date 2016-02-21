@@ -3,12 +3,31 @@ const httpProxy = require('http-proxy')
 const Url = require('url')
 const startsWith = require('lodash').startsWith
 const assign = require('lodash').assign
+const redirect = require('predirect')
 
 module.exports = { createServer }
 
 function createServer (config) {
   const proxy = httpProxy.createProxyServer({
     ignorePath: true
+  })
+
+  proxy.on('error', function (err, req, res) {
+    console.log(JSON.stringify({
+      name: 'proxy',
+      level: 'warn',
+      url: req.url,
+      message: err.message
+    }))
+    if (err.code === 'ECONNREFUSED') {
+      // HACK delay request for one second
+      setTimeout(function () {
+        redirect(req, res, `http://localhost:${config.proxy.port}${req.url}`)
+      }, 1000)
+    } else {
+      res.writeHead(500, { 'Content-Type': 'text/plain' })
+      res.end('Internal Server Error')
+    }
   })
 
   const server = http.createServer(function (req, res) {

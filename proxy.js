@@ -5,5 +5,9 @@ const Url = require('url')
 const server = createServer(config)
 
 server.listen(config.proxy.port, function () {
-  console.log(`proxy server listening on port ${config.proxy.port}`)
+  console.log(JSON.stringify({
+    name: 'proxy',
+    level: 'info',
+    message: `proxy server listening on port ${config.proxy.port}`
+  }))
 })
