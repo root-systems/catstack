@@ -113,7 +113,7 @@
     "envify": "^3.4.0",
     "evalify": "github:ahdinosaur/evalify#minimatch",
     "feathers": "^2.0.0-pre.4",
-    "feathers-action": "^1.0.2",
+    "feathers-action": "^1.0.3",
     "feathers-authentication": "^0.7.1",
     "feathers-hooks": "^1.4.0",
     "feathers-knex": "^2.1.0",
