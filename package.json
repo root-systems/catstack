@@ -115,7 +115,7 @@
     "feathers": "^2.0.0-pre.4",
     "feathers-action": "^1.0.2",
     "feathers-authentication": "^0.2.2",
-    "feathers-hooks": "^1.0.0-pre.4",
+    "feathers-hooks": "^1.4.0",
     "feathers-knex": "^2.1.0",
     "feathers-rest": "^1.2.2",
     "feathers-tcomb": "^1.0.0",
