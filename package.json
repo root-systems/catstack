@@ -138,7 +138,7 @@
     "reselect": "^2.0.2",
     "send-data": "^8.0.0",
     "simple-rc": "^1.0.0",
-    "tcomb": "^2.6.0",
+    "tcomb": "^3.0.0",
     "uglifyify": "^3.0.1"
   }
 }
