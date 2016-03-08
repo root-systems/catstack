@@ -124,7 +124,7 @@
     "knex": "^0.10.0",
     "lnfs-cli": "^1.0.1",
     "lodash": "^4.3.0",
-    "npm-run-all": "^1.5.0",
+    "npm-run-all": "^1.5.2",
     "pg": "^4.4.3",
     "pinkie-promise": "^2.0.0",
     "predirect": "^1.1.0",
