@@ -75,7 +75,7 @@
     "browserify-hmr": "^0.3.1",
     "cucumber": "^0.9.2",
     "ecstatic-lr": "^1.0.1",
-    "feathers-memory": "^0.6.0",
+    "feathers-memory": "^0.7.1",
     "garnish": "^5.0.1",
     "multi-glob": "^1.0.1",
     "node-dev": "^3.0.0",
