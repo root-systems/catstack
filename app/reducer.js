@@ -1,6 +1,6 @@
 const bulk = require('bulk-require')
 import { combineReducers } from 'redux'
-import { routeReducer } from 'redux-simple-router'
+import { routerReducer } from 'react-router-redux'
 import { map, mapValues, assign, camelCase, mapKeys } from 'lodash'
 
 export default combine(assign(
@@ -18,7 +18,7 @@ export default combine(assign(
     )
   ),
   {
-    routing: routeReducer
+    routing: routerReducer
   }
 ))
 
