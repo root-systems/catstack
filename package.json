@@ -107,7 +107,7 @@
     "bulkify": "^1.1.1",
     "cors": "^2.7.1",
     "cpx": "^1.2.1",
-    "css-modules-require-hook": "^2.1.0",
+    "css-modules-require-hook": "^3.0.0",
     "cssify": "github:ahdinosaur/cssify",
     "ecstatic": "^1.4.0",
     "envify": "^3.4.0",
