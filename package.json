@@ -22,7 +22,7 @@
     "dev:livereload": "wtch -d build -e html,css,png,gif,jpg | garnish --level debug",
     "dev:api": "node-dev api",
     "dev:static": "node-dev static",
-    "dev:proxy": "node-dev proxy",
+    "dev:proxy": "node-dev proxy | garnish --level debug",
     "prod:render-browser": "browserify app/render -o build/bundle.js -g envify -g uglifyify",
     "prod:render-node": "node render",
     "prod:assets": "cpx \"app/assets/**/*\" build",
