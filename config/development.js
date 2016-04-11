@@ -1,3 +1,4 @@
+const execSync = require('child_process').execSync
 const join = require('path').join
 
 module.exports = {
@@ -35,7 +36,7 @@ module.exports = {
   db: {
     client: 'pg',
     connection: {
-      host     : 'localhost',
+      host     : process.platform === 'darwin' ? execSync('docker-machine ip default').toString().trim() : 'localhost',
       user     : 'postgres',
       //password : 'postgres',
       database : 'postgres'
