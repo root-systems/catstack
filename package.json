@@ -71,7 +71,7 @@
     "npm": "^3.0.0"
   },
   "devDependencies": {
-    "ava": "^0.13.0",
+    "ava": "^0.14.0",
     "babel-plugin-react-transform": "^2.0.0",
     "browserify-hmr": "^0.3.1",
     "cucumber": "^0.10.2",
@@ -139,7 +139,7 @@
     "redux-thunk": "^2.0.1",
     "reselect": "^2.0.2",
     "send-data": "^8.0.0",
-    "simple-rc": "^1.0.0",
+    "simple-rc": "^1.0.3",
     "tcomb": "^3.0.0",
     "uglifyify": "^3.0.1"
   }
