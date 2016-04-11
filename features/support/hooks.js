@@ -1,5 +1,5 @@
-require('babel-core/register')
-require('css-modules-require-hook')
+require('css-modules-require-hook')({})
+require('babel-register')
 
 const _ = require('lodash')
 const parallel = require('run-parallel')

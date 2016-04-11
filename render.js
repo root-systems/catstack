@@ -1,5 +1,5 @@
-require('babel-core/register')
-require('css-modules-require-hook')
+require('css-modules-require-hook')({})
+require('babel-register')
 
 const config = require('app/config')
 const createServer = require('app/render').createServer

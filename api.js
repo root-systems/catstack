@@ -1,4 +1,4 @@
-require('babel-core/register')
+require('babel-register')
 
 const config = require('app/config')
 const createServer = require('app/api').createServer
