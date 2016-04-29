@@ -1,3 +1,4 @@
+const Tc = require('tcomb')
 const feathers = require('feathers')
 const rest = require('feathers-rest')
 const hooks = require('feathers-hooks')
@@ -20,7 +21,7 @@ function createApi (options) {
 
   useServices(api, options)
 
-  return app
+  return api
 }
 
 function useAll (api, { config, services }) {
