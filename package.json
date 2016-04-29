@@ -1,5 +1,5 @@
 {
-  "name": "business-stack",
+  "name": "cat-stack",
   "version": "0.0.0",
   "description": "real-world production-quality TodoMVC example",
   "scripts": {
@@ -11,11 +11,11 @@
     "test:spec": "ava",
     "test:feature": "cucumber-js",
     "pg:pull": "docker pull postgres",
-    "pg:run": "docker run -d -p 5432:5432 --name=business-postgres postgres",
-    "pg:start": "docker start business-postgres",
-    "pg:stop": "docker stop business-postgres",
-    "pg:rm": "docker rm business-postgres",
-    "pg:logs": "docker logs business-postgres",
+    "pg:run": "docker run -d -p 5432:5432 --name=cat-postgres postgres",
+    "pg:start": "docker start cat-postgres",
+    "pg:stop": "docker stop cat-postgres",
+    "pg:rm": "docker rm cat-postgres",
+    "pg:logs": "docker logs cat-postgres",
     "dev:render-browser": "BABEL_ENV=hot watchify app/render -o build/bundle.js -dv -p browserify-hmr",
     "dev:render-node": "node-dev render",
     "dev:assets": "cpx \"app/assets/**/*\" build -w",
@@ -45,7 +45,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/enspiral-craftworks/business-stack.git"
+    "url": "git+https://github.com/enspiral-craftworks/cat-stack.git"
   },
   "keywords": [
     "todomvc",
@@ -63,9 +63,9 @@
   "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.is)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/enspiral-craftworks/business-stack/issues"
+    "url": "https://github.com/enspiral-craftworks/cat-stack/issues"
   },
-  "homepage": "https://github.com/enspiral-craftworks/business-stack#readme",
+  "homepage": "https://github.com/enspiral-craftworks/cat-stack#readme",
   "engines": {
     "node": "^4.0.0",
     "npm": "^3.0.0"

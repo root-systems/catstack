@@ -1,8 +1,12 @@
-# business-stack
+# cat-stack
 
 ** work in progress **
 
-real-world, production-quality stack for [Craftworks](http://craftworks.enspiral.com)
+modular framework for data-driven real-time apps 
+
+![cat stack](http://i.imgur.com/v5zw1z3.jpg)
+
+made by [Enspiral Craftworks](http://craftworks.enspiral.com)
 
 ## resources
 
