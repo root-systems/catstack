@@ -65,15 +65,7 @@ catstack start
 
 ### test
 
-runs tests
-
-```shell
-catstack test
-```
-
-#### test:spec
-
-runs [tape](https://www.npmjs.com/package/tape) tests
+runs [`pull-test`](https://github.com/ahdinosaur/pull-test) tests
 
 can optionally take a [glob](https://www.npmjs.com/package/glob)
 
@@ -81,7 +73,7 @@ can optionally take a [glob](https://www.npmjs.com/package/glob)
 npm run test -- './todos/**/*.test.js'
 ```
 
-default glob is `./**/*.test.js`
+default glob is `./**/*.test.js` ignoring `node_modules`
 
 ### lint
 
@@ -97,7 +89,7 @@ default glob is `./**/*.js` ignoring `node_modules`
 
 ### format
 
-converts to [standard](http://standardjs.com) if possible
+converts to [standard style](http://standardjs.com) if possible
 
 can optionally take a [glob](https://www.npmjs.com/package/glob)
 
@@ -111,10 +103,10 @@ default glob is `./**/*.js` ignoring `node_modules`
 
 ## directory structure
 
-- `/config/`
-  - `/config/index.js`
-  - `/config/${ NODE_ENV }.js`
-- `/${ domain }/`
+- `config/`
+  - `config/index.js`
+  - `config/${ NODE_ENV }.js`
+- `${ domain }/`
 - tests are any files that end in `.test.js`
 
 ### domain overview
@@ -132,19 +124,123 @@ each domain directory may contain any of:
 - `helpers/*.js`: exports helper functions
 - `service.js`: exports [`vas`](https://github.com/ahdinosaur/vas) service
 
-### `/${ domain }/state.js`
+### `${ domain }/state.js`
+
+```js
+// cats/state.js`
+module.exports = {
+  create: () => ({
+    state: {
+      model: {},
+      effect: null
+    }
+  })
+}
+```
 
 ### `/${ domain }/actions/*.js`
 
+```js
+// cats/actions/create.js
+module.exports = {
+  create: () => ({
+    update: (model, action) => {
+      console.log('cat:create', model, action)
+      return model
+    }
+  })
+}
+```
+
 ### `/${ domain }/effects/*.js`
+
+```js
+// cats/effects/fetch.js
+module.exports = {
+  create: () => ({
+    run: (effect) => {
+      console.log('cat:fetch', effect)
+    }
+  })
+}
+```
 
 ### `/${ domain }/getters.js`
 
+```js
+// cats/getters/getCats.js
+module.exports = {
+  create: () => (state) => state.cats
+}
+```
+
 ### `/${ domain }/pages/*.js`
+
+```js
+// cats/pages/show.js
+module.exports = {
+  needs: {
+    layout: 'first',
+    cats: {
+      profile: 'first'
+    }
+  },
+  create: (api) => ({
+    route: '/cats/:catId',
+    view: api.layout((model) => api.cats.profile)
+  })
+}
+```
 
 ### `/${ domain }/elements/*.js`
 
+```js
+// cats/elements/profile.js
+module.exports = {
+  needs: {
+    html: 'first'
+  },
+  create: (api) => ({
+    view: (cat) => api.html`
+      <div>${cat.name}</div>
+    `
+  })
+}
+```
+
 ### `/${ domain }/service.js`
+
+```js
+// cats/service.js
+module.exports = {
+  needs: {
+    data: 'first'
+  },
+  manifest: {
+    all: 'source',
+    get: 'async'
+  },
+  create: function (api) {
+    const cats = [{
+      name: 'Fluffy'
+    }, {
+      name: 'Zoe'
+    }]
+
+    return {
+      methods: { all, get }
+    }
+
+    function all () {
+      return pull.values(cats)
+    }
+
+    function get (id, cb) {
+      cb(null, data[id])
+    }
+  }
+})
+```
 
 ## FAQ
 
