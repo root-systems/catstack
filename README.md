@@ -165,7 +165,7 @@ module.exports = {
 }
 ```
 
-### `/${ domain }/getters.js`
+### `/${ domain }/getters/*.js`
 
 ```js
 // cats/getters/getCats.js
