@@ -2,21 +2,49 @@
   "name": "catstack",
   "version": "0.0.0",
   "description": "modular framework for real-time data-driven apps",
-  "scripts": {},
+  "scripts": {
+    "example:start": "NODE_ENV=development cd example && node-dev ../bin/start"
+  },
+  "browser": {
+    "./modules/assets.js": false
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/enspiral-craftworks/catstack.git"
+    "url": "git+https://github.com/enspiral-root-systems/catstack.git"
   },
   "keywords": [],
   "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.is)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/enspiral-craftworks/catstack/issues"
+    "url": "https://github.com/enspiral-root-systems/catstack/issues"
   },
-  "homepage": "https://github.com/enspiral-craftworks/catstack#readme",
+  "homepage": "https://github.com/enspiral-root-systems/catstack#readme",
   "engines": {
     "node": "^6.0.0"
   },
-  "devDependencies": {},
-  "dependencies": {}
+  "devDependencies": {
+    "node-dev": "^3.1.3",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "browserify": "^14.0.0",
+    "bulk-require": "^1.0.0",
+    "bulkify": "github:ahdinosaur/bulkify",
+    "catstack-log": "github:catstack/catstack-log",
+    "depject": "^3.1.5",
+    "es2040": "^1.2.4",
+    "evalify": "^2.0.0",
+    "inu": "github:ahdinosaur/inu#v4",
+    "inu-engine": "github:ahdinosaur/inu-engine",
+    "inu-log": "github:ahdinosaur/inu-log#v2",
+    "inu-router": "github:ahdinosaur/inu-router",
+    "minimatch": "^3.0.3",
+    "modify-values": "^1.0.0",
+    "read-directory": "^2.0.0",
+    "require-from-string": "^1.2.1",
+    "value-pipe": "github:ahdinosaur/value-pipe",
+    "vas": "github:ahdinosaur/vas#v3",
+    "vas-assets": "github:ahdinosaur/vas-assets",
+    "vas-http": "github:ahdinosaur/vas-http"
+  }
 }
