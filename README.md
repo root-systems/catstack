@@ -10,6 +10,8 @@ made by [Enspiral Root Systems](https://github.com/enspiral-root-systems/meta)
 
 inspired by [`ahdinosaur/mad-science-handbook`](https://github.com/ahdinosaur/mad-science-handbook)
 
+for previous version, see [catstack@1](https://github.com/enspiral-root-systems/catstack/commit/8830cf8b4bb8ce794ed491d03ab0d96bbb66df8f)
+
 ## concepts
 
 - [modules](https://github.com/dominictarr/depject)
