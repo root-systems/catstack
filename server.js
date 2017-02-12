@@ -5,5 +5,5 @@ module.exports = startServer
 function startServer ({ cwd } = {}) {
   const sockets = app({ cwd })
   console.log(sockets)
-  sockets.vas.start.map(s => s())
+  sockets.server.start.map(s => s())
 }

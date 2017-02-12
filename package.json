@@ -6,7 +6,8 @@
     "example:start": "NODE_ENV=development cd example && node-dev ../bin/start"
   },
   "browser": {
-    "./modules/assets.js": false
+    "./modules/assets.js": false,
+    "./modules/http-server.js": false
   },
   "repository": {
     "type": "git",
@@ -30,10 +31,13 @@
     "browserify": "^14.0.0",
     "bulk-require": "^1.0.0",
     "bulkify": "github:ahdinosaur/bulkify",
+    "catstack-assets": "^1.0.0-pre.0",
     "catstack-log": "github:catstack/catstack-log",
     "depject": "^3.1.5",
     "es2040": "^1.2.4",
     "evalify": "^2.0.0",
+    "http-compose": "^1.0.1",
+    "http-sender": "^2.0.0",
     "inu": "github:ahdinosaur/inu#v4",
     "inu-engine": "github:ahdinosaur/inu-engine",
     "inu-log": "github:ahdinosaur/inu-log#v2",
@@ -43,8 +47,8 @@
     "read-directory": "^2.0.0",
     "require-from-string": "^1.2.1",
     "value-pipe": "github:ahdinosaur/value-pipe",
-    "vas": "github:ahdinosaur/vas#v3",
+    "vas": "^3.0.0-pre.0",
     "vas-assets": "github:ahdinosaur/vas-assets",
-    "vas-http": "github:ahdinosaur/vas-http"
+    "vas-http": "^1.0.0-pre.0"
   }
 }
