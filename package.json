@@ -1,6 +1,6 @@
 {
   "name": "catstack",
-  "version": "2.0.0-pre.1",
+  "version": "2.0.0-pre.2",
   "description": "modular framework for real-time data-driven apps",
   "scripts": {
     "example:start": "NODE_ENV=development cd example && node-dev ../bin/start"
