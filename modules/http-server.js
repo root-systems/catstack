@@ -123,7 +123,6 @@ module.exports = {
       const httpServer = api.http.server()
 
       // TODO noop if already started?
-      console.log('start!')
 
       httpServer.listen(api.config.http.port(), function () {
         api.log.info({

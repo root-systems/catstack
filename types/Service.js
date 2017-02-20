@@ -1,16 +1,17 @@
+const vas = require('vas')
 const pipe = require('value-pipe')
-const State = require('inu/state')
+const { set, map } = require('libnested')
 
+const Service = require('../lib/Service')
 const pathModule = require('../lib/pathModule')
 const normalizeNeeds = require('../lib/normalizeNeeds')
-const scopeModule = require('../lib/scopeModule')
 
 module.exports = {
   transform: pipe(
     pathModule,
     normalizeNeeds,
-    scopeModule,
-    State
+    Service
   ),
-  glob: '**/state.js'
+  //glob: '**/+(services/*|service).js'
+  glob: '**/service.js'
 }
