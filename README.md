@@ -132,10 +132,10 @@ each domain directory may contain any of:
 // cats/state.js`
 module.exports = {
   create: () => ({
-    state: {
+    init: () => ({
       model: {},
       effect: null
-    }
+    })
   })
 }
 ```
@@ -160,17 +160,17 @@ module.exports = {
 // cats/effects/fetch.js
 module.exports = {
   create: () => ({
-    run: (effect) => {
+    run: (model, effect) => {
       console.log('cat:fetch', effect)
     }
   })
 }
 ```
 
-### `/${ domain }/getters/*.js`
+### `/${ domain }/get/*.js`
 
 ```js
-// cats/getters/getCats.js
+// cats/get/cats.js
 module.exports = {
   create: () => (state) => state.cats
 }

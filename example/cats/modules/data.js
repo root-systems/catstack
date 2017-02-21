@@ -1,7 +1,13 @@
+const randomCatName = require('cat-names').random
+
 module.exports = {
-  create: () => () => ({
-    1: 'human',
-    2: 'computer',
-    3: 'JavaScript'
-  })
+  create: () => {
+    var cats = {}
+    for (var id = 1; id < 10; id++) {
+      cats[id] = {
+        name: randomCatName()
+      }
+    }
+    return () => cats
+  }
 }

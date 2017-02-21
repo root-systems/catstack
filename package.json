@@ -25,6 +25,7 @@
     "node": "^6.0.0"
   },
   "devDependencies": {
+    "cat-names": "^1.0.2",
     "node-dev": "^3.1.3",
     "object-values": "^1.0.0",
     "tape": "^4.6.3"
@@ -49,6 +50,7 @@
     "modify-values": "^1.0.0",
     "read-directory": "^2.0.0",
     "require-from-string": "^1.2.1",
+    "reselect": "^2.5.4",
     "value-pipe": "github:ahdinosaur/value-pipe",
     "vas": "^3.0.0-pre.1",
     "vas-http": "^1.0.0-pre.2"
