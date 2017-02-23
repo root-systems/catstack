@@ -6,7 +6,7 @@ module.exports = {
     <ul>
       ${cats.map(cat => api.inu.html`
         <li>
-          <a href=${`/cat/${cat.id}`}>
+          <a href=${`/cats/${cat.id}`}>
             ${cat.name}
           </a>
         </li>

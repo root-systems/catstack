@@ -9,7 +9,7 @@ module.exports = {
     }
   },
   create: (api) => ({
-    route: '/cat/:catId',
+    route: '/cats/:catId',
     layout: api.app.layout.main,
     get: api.cats.get.oneProps,
     view: (props, dispatch) => {
