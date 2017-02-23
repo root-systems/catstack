@@ -182,14 +182,17 @@ module.exports = {
 // cats/pages/show.js
 module.exports = {
   needs: {
-    layout: 'first',
+    'app.layouts.main': 'first',
     cats: {
-      profile: 'first'
+      'elements.profile': 'first',
+      'get.show': 'first'
     }
   },
   create: (api) => ({
     route: '/cats/:catId',
-    view: api.layout((model) => api.cats.profile)
+    layout: api.layouts.main,
+    get: api.cats.get.show,
+    view: api.cats.profile
   })
 }
 ```
@@ -200,7 +203,7 @@ module.exports = {
 // cats/elements/profile.js
 module.exports = {
   needs: {
-    html: 'first'
+    'inu.html': 'first'
   },
   create: (api) => ({
     view: (cat) => api.html`

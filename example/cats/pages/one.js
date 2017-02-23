@@ -3,18 +3,15 @@ const { get } = require('libnested')
 module.exports = {
   needs: {
     'inu.html': 'first',
-    'app.modules.layout': 'first',
+    'app.layouts.main': 'first',
     'cats.get.oneProps': 'first'
   },
   create: (api) => ({
     route: '/cat/:catId',
-    view: (model, dispatch) => {
-      const layout = api.app.modules.layout(model, dispatch)
-      const props = api.cats.get.oneProps(model)
-      const view = api.inu.html`
-        <h1>${props.cat.name}!</h1>  
-      `
-      return layout(view)
-    }
+    layout: api.app.layouts.main,
+    get: api.cats.get.oneProps,
+    view: (props, dispatch) => api.inu.html`
+      <h1>${props.cat ? props.cat.name : ''}!</h1>  
+    `
   })
 }
