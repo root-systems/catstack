@@ -4,7 +4,7 @@ const { pull } = require('../../')
 
 module.exports = {
   needs: {
-    'cats.module.data': 'first'
+    'cats.data': 'first'
   },
   manifest: {
     all: 'source',
@@ -13,13 +13,13 @@ module.exports = {
   create: (api) => ({
     methods: {
       all: function () {
-        const data = api.cats.module.data()
+        const data = api.cats.data()
         const cats = keys(data)
           .map(id => assign({ id }, data[id]))
         return pull.values(cats)
       },
       get: function ({ id }, cb) {
-        const data = api.cats.module.data()
+        const data = api.cats.data()
         cb(null, assign({ id }, data[id]))
       }
     }

@@ -9,6 +9,5 @@ module.exports = {
     pathModule,
     normalizeNeeds,
     Module
-  ),
-  glob: '**/module/*.js'
+  )
 }
