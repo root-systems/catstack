@@ -7,7 +7,7 @@
     "catstack": "./bin/index.js"
   },
   "scripts": {
-    "example:start": "NODE_ENV=development node-dev ./bin/index.js server --cwd=$(pwd)/example"
+    "example:start": "./bin/index.js dev server --cwd=$(pwd)/example"
   },
   "browser": {
     "./lib/Service.js": "./lib/Client.js",

@@ -34,7 +34,8 @@ const config = {
     help: 'base directory from which the relative paths are resolved'
   }],
   commands: [
-    require('./server')
+    require('./server'),
+    require('./dev')
   ],
   none: function noCommand (args) {
     if (!args.version) {
