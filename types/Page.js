@@ -8,5 +8,5 @@ module.exports = {
     normalizeNeeds,
     Page
   ),
-  glob: '**/pages/*.js'
+  glob: '**/page/*.js'
 }

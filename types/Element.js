@@ -10,5 +10,5 @@ module.exports = {
     normalizeNeeds,
     Module
   ),
-  glob: '**/elements/*.js'
+  glob: '**/element/*.js'
 }

@@ -4,24 +4,24 @@ const { get } = require('libnested')
 module.exports = {
   needs: {
     'inu.html': 'first',
-    'app.layouts.main': 'first',
+    'app.layout.main': 'first',
     cats: {
-      'actions.loadAll': 'first',
+      'action.loadAll': 'first',
       'get.allProps': 'first',
-      'elements.all': 'first'
+      'element.all': 'first'
     }
   },
   create: (api) => ({
     route: '/cats',
-    layout: api.app.layouts.main,
+    layout: api.app.layout.main,
     get: api.cats.get.allProps,
     view: (props, dispatch) => {
-      const view = api.cats.elements.all(props.cats)
+      const view = api.cats.element.all(props.cats)
 
       return onLoad(view, handleLoad)
 
       function handleLoad (el) {
-        dispatch(api.cats.actions.loadAll())
+        dispatch(api.cats.action.loadAll())
       }
     }
   })

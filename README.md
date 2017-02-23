@@ -140,10 +140,10 @@ module.exports = {
 }
 ```
 
-### `/${ topic }/actions/*.js`
+### `/${ topic }/action/*.js`
 
 ```js
-// cats/actions/create.js
+// cats/action/create.js
 module.exports = {
   create: () => ({
     update: (model, action) => {
@@ -154,10 +154,10 @@ module.exports = {
 }
 ```
 
-### `/${ topic }/effects/*.js`
+### `/${ topic }/effect/*.js`
 
 ```js
-// cats/effects/fetch.js
+// cats/effect/fetch.js
 module.exports = {
   create: () => ({
     run: (model, effect) => {
@@ -176,31 +176,31 @@ module.exports = {
 }
 ```
 
-### `/${ topic }/pages/*.js`
+### `/${ topic }/page/*.js`
 
 ```js
-// cats/pages/show.js
+// cats/page/show.js
 module.exports = {
   needs: {
-    'app.layouts.main': 'first',
+    'app.layout.main': 'first',
     cats: {
-      'elements.profile': 'first',
+      'element.profile': 'first',
       'get.show': 'first'
     }
   },
   create: (api) => ({
     route: '/cats/:catId',
-    layout: api.layouts.main,
+    layout: api.layout.main,
     get: api.cats.get.show,
-    view: api.cats.profile
+    view: api.cats.element.profile
   })
 }
 ```
 
-### `/${ topic }/elements/*.js`
+### `/${ topic }/element/*.js`
 
 ```js
-// cats/elements/profile.js
+// cats/element/profile.js
 module.exports = {
   needs: {
     'inu.html': 'first'

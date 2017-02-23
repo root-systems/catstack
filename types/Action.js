@@ -12,5 +12,5 @@ module.exports = {
     scopeModule,
     Action
   ),
-  glob: '**/actions/*.js'
+  glob: '**/action/*.js'
 }
