@@ -1,3 +1,4 @@
+const onLoad = require('on-load')
 const { get } = require('libnested')
 
 module.exports = {
@@ -6,7 +7,8 @@ module.exports = {
     'app.layouts.main': 'first',
     cats: {
       'actions.loadAll': 'first',
-      'get.allProps': 'first'
+      'get.allProps': 'first',
+      'elements.all': 'first'
     }
   },
   create: (api) => ({
@@ -14,17 +16,9 @@ module.exports = {
     layout: api.app.layouts.main,
     get: api.cats.get.allProps,
     view: (props, dispatch) => {
-      return api.inu.html`
-        <ul onload=${handleLoad}>
-          ${props.cats.map(cat => api.inu.html`
-            <li>
-              <a href=${`/cat/${cat.id}`}>
-                ${cat.name}
-              </a>
-            </li>
-          `)}
-        </ul>
-      `
+      const view = api.cats.elements.all(props.cats)
+
+      return onLoad(view, handleLoad)
 
       function handleLoad (el) {
         dispatch(api.cats.actions.loadAll())

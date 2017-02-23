@@ -108,25 +108,25 @@ default glob is `./**/*.js` ignoring `node_modules`
 - `config/`
   - `config/index.js`
   - `config/${ NODE_ENV }.js`
-- `${ domain }/`
+- `${ topic }/`
 - tests are any files that end in `.test.js`
 
-### domain overview
+### topic overview
 
-in contrast to frameworks like Rails which split our app into directories for each "type" of file (models, views, controllers), our app is split into directories for each conceptual domain, where each domain contains the various types of files *within* that domain.
+in contrast to frameworks like Rails which split our app into directories for each "type" of file (models, views, controllers), our app is split into directories for each conceptual topic, where each topic contains the various types of files *within* that topic.
 
-each domain directory may contain any of:
+each topic directory may contain any of:
 
 - `state.js`: exports initial store state
-- `actions/*.js`: exports store actions
-- `effects/*.js`: exports effects
-- `getters.js`: exports [`reselect`](https://www.npmjs.com/package/reselect) getters
-- `pages/*.js`: exports routed views
-- `elements/*.js`: exports presentation views
-- `helpers/*.js`: exports helper functions
+- `action/*.js`: exports store actions
+- `effect/*.js`: exports effects
+- `getter/*.js`: exports [`reselect`](https://www.npmjs.com/package/reselect) getters
+- `page/*.js`: exports routed views
+- `element/*.js`: exports presentation views
+- `helper/*.js`: exports helper functions
 - `service.js`: exports [`vas`](https://github.com/ahdinosaur/vas) service
 
-### `${ domain }/state.js`
+### `${ topic }/state.js`
 
 ```js
 // cats/state.js`
@@ -140,7 +140,7 @@ module.exports = {
 }
 ```
 
-### `/${ domain }/actions/*.js`
+### `/${ topic }/actions/*.js`
 
 ```js
 // cats/actions/create.js
@@ -154,7 +154,7 @@ module.exports = {
 }
 ```
 
-### `/${ domain }/effects/*.js`
+### `/${ topic }/effects/*.js`
 
 ```js
 // cats/effects/fetch.js
@@ -167,7 +167,7 @@ module.exports = {
 }
 ```
 
-### `/${ domain }/get/*.js`
+### `/${ topic }/get/*.js`
 
 ```js
 // cats/get/cats.js
@@ -176,7 +176,7 @@ module.exports = {
 }
 ```
 
-### `/${ domain }/pages/*.js`
+### `/${ topic }/pages/*.js`
 
 ```js
 // cats/pages/show.js
@@ -197,7 +197,7 @@ module.exports = {
 }
 ```
 
-### `/${ domain }/elements/*.js`
+### `/${ topic }/elements/*.js`
 
 ```js
 // cats/elements/profile.js
@@ -213,7 +213,7 @@ module.exports = {
 }
 ```
 
-### `/${ domain }/service.js`
+### `/${ topic }/service.js`
 
 ```js
 // cats/service.js
