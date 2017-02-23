@@ -2,8 +2,12 @@
   "name": "catstack",
   "version": "2.0.0-pre.3",
   "description": "modular framework for real-time data-driven apps",
+  "main": "index.js",
+  "bin": {
+    "catstack": "./bin/index.js"
+  },
   "scripts": {
-    "example:start": "NODE_ENV=development cd example && node-dev ../bin/start"
+    "example:start": "NODE_ENV=development node-dev ./bin/index.js server --cwd=$(pwd)/example"
   },
   "browser": {
     "./lib/Service.js": "./lib/Client.js",
@@ -36,7 +40,9 @@
     "bulkify": "github:ahdinosaur/bulkify",
     "catstack-assets": "^1.0.0-pre.0",
     "catstack-log": "github:catstack/catstack-log",
-    "depject": "^3.1.5",
+    "cliclopts": "^1.1.1",
+    "dargs": "^5.1.0",
+    "depject": "^3.2.0",
     "depnest": "^1.0.2",
     "es2040": "^1.2.4",
     "evalify": "^2.0.0",
@@ -48,9 +54,12 @@
     "inu-router": "github:ahdinosaur/inu-router",
     "minimatch": "^3.0.3",
     "modify-values": "^1.0.0",
+    "pkg-conf": "^2.0.0",
     "read-directory": "^2.0.0",
     "require-from-string": "^1.2.1",
     "reselect": "^2.5.4",
+    "set-blocking": "^2.0.0",
+    "subcommand": "^2.1.0",
     "value-pipe": "github:ahdinosaur/value-pipe",
     "vas": "^3.0.0-pre.1",
     "vas-http": "^1.0.0-pre.2"
