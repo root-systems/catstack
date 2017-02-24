@@ -104,12 +104,10 @@ default glob is `./**/*.js` ignoring `node_modules`
 ### db:clean
 
 ## directory structure
-the catstack files are organized in the following hierarchy:
 
-${topic} / ${type} / ${module}.js
-or when module name is different from file name:
+the `catstack` files are organized in the following hierarchy:
 
-${topic} / ${type} / ${module} / ${file}.js
+> ${topic} / ${type} / ${module}.js
 
 - `config/`
   - `config/index.js`
