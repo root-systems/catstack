@@ -1,7 +1,9 @@
 module.exports = {
-  needs: { 'inu.html': 'first' },
+  needs: {
+    'html.create': 'first'
+  },
   create: (api) => (view) => {
-    return (model, dispatch) => api.inu.html`
+    return (model, dispatch) => api.html.create`
       <div>
         <nav>
           <a href='/'>home</a>

@@ -1,10 +1,10 @@
 module.exports = {
   needs: {
-    'inu.html': 'first'
+    'html.create': 'first',
   },
-  create: (api) => (cats) => api.inu.html`
+  create: (api) => (cats) => api.html.create`
     <ul>
-      ${cats.map(cat => api.inu.html`
+      ${cats.map(cat => api.html.create`
         <li>
           <a href=${`/cats/${cat.id}`}>
             ${cat.name}

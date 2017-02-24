@@ -1,12 +1,12 @@
 module.exports = {
   needs: {
-    'inu.html': 'first',
-    'app.layout.main': 'first'
+    'html.create': 'first',
+    'app.layout': 'first'
   },
   create: (api) => ({
     route: '/',
-    layout: api.app.layout.main,
-    view: (model, dispatch) => api.inu.html`
+    layout: api.app.layout,
+    view: (model, dispatch) => api.html.create`
       <div>home!</div>  
     `
   })

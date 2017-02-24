@@ -1,8 +1,8 @@
 module.exports = {
   needs: {
-    'inu.html': 'first'
+    'html.create': 'first',
   },
-  create: (api) => (cat) => api.inu.html`
+  create: (api) => (cat) => api.html.create`
     <h1>${cat ? cat.name : ''}!</h1>  
   `
 }
