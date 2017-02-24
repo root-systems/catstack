@@ -2,7 +2,7 @@
 
 ** work in progress **
 
-modular framework for data-driven real-time apps 
+modular framework for data-driven real-time apps
 
 ![cat stack](http://i.imgur.com/v5zw1z3.jpg)
 
@@ -104,6 +104,12 @@ default glob is `./**/*.js` ignoring `node_modules`
 ### db:clean
 
 ## directory structure
+the catstack files are organized in the following hierarchy:
+
+${topic} / ${type} / ${module}.js
+or when module name is different from file name:
+
+${topic} / ${type} / ${module} / ${file}.js
 
 - `config/`
   - `config/index.js`
