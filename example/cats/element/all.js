@@ -1,6 +1,6 @@
 module.exports = {
   needs: {
-    'html.create': 'first',
+    'html.create': 'first'
   },
   create: (api) => (cats) => api.html.create`
     <ul>

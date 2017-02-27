@@ -1,5 +1,4 @@
 const onLoad = require('on-load')
-const { get } = require('libnested')
 
 module.exports = {
   needs: {

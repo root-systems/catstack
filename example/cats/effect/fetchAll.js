@@ -3,7 +3,7 @@ const { pull } = require('../../../')
 module.exports = {
   needs: {
     'cats.service.all': 'first',
-    'cats.action.set': 'first',
+    'cats.action.set': 'first'
   },
   create: (api) => ({
     run: (model, cat) => pull(

@@ -15,8 +15,8 @@ module.exports = {
       entryFile: () => join(__dirname, '../browserEntry.js'),
       js: () => ({
         transform: [
-          ['evalify', { files: ['**/service.js', '**/services/*.js'] } ],
-          ['bulkify', { vars: { cwd: api.config.cwd(), process  } } ],
+          [ 'evalify', { files: ['**/service.js', '**/services/*.js'] } ],
+          [ 'bulkify', { vars: { cwd: api.config.cwd(), process } } ],
           'es2040'
         ]
       })

@@ -1,9 +1,11 @@
+const assert = require('assert')
 const Url = require('url')
 const http = require('http')
 const compose = require('http-compose')
 const Sender = require('http-sender')
 const vas = require('vas')
 const vasHttp = require('vas-http')
+const createHttpError = require('http-errors')
 
 module.exports = {
   needs: {
@@ -89,10 +91,6 @@ module.exports = {
     function notFoundResponder () {}
 
     function createStack (handlers) {
-      const valueResponder = api.http.valueResponder()
-      const errorResponder = api.http.errorResponder()
-      const notFoundResponder = api.http.notFoundResponder()
-
       const handler = compose(handlers)
       const Send = Sender({
         value: api.http.valueResponder(),

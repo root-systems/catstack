@@ -9,7 +9,7 @@ const fs = require('fs')
 const Path = require('path')
 
 // TODO get logger from depject modules
-//const log = require('../log')
+// const log = require('../log')
 
 const pkgPath = Path.join(__dirname, '../package.json')
 const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
@@ -26,7 +26,7 @@ const config = {
       boolean: true,
       abbr: 'h',
       help: 'print help'
-    }],
+    }]
   },
   defaults: [{
     name: 'cwd',
@@ -92,7 +92,7 @@ function usageAll () {
 }
 
 function usageOne (command) {
-  console.log('Usage: catstack '+command.name+' [options]')
-  console.log('  catstack '+command.name)
+  console.log('Usage: catstack ' + command.name + ' [options]')
+  console.log('  catstack ' + command.name)
   cliopts(command.options).print()
 }

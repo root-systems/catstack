@@ -1,6 +1,4 @@
-const vas = require('vas')
 const pipe = require('value-pipe')
-const { set, map } = require('libnested')
 
 const Service = require('../lib/Service')
 const pathModule = require('../lib/pathModule')
@@ -12,6 +10,6 @@ module.exports = {
     normalizeNeeds,
     Service
   ),
-  //glob: '**/+(services/*|service).js'
+  // glob: '**/+(services/*|service).js'
   glob: '**/service.js'
 }

@@ -1,5 +1,3 @@
-const { get } = require('libnested')
-
 module.exports = {
   needs: {
     'app.layout': 'first',

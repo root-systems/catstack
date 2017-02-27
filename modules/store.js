@@ -5,4 +5,4 @@ module.exports = {
     gives: { inu: { dispatch: true } },
     create: () => ({ inu: { dispatch: () => {} } })
   }
- }
+}

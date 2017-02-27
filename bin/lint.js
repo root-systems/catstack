@@ -1,4 +1,3 @@
-const deglob = require('deglob')
 const lintOptions = require('standard/options')
 const lint = require('standard-engine').cli
 
