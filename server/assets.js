@@ -12,7 +12,7 @@ module.exports = {
       ]
     }),
     create: (api) => nest('config.assets', {
-      entryFile: () => join(__dirname, '../browserEntry.js'),
+      entryFile: () => join(__dirname, '../browser/entry.js'),
       js: () => ({
         transform: [
           [ 'evalify', { files: ['**/service.js', '**/services/*.js'] } ],

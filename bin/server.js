@@ -4,8 +4,8 @@ module.exports = {
   name: 'server',
   options: [{}],
   command: (args) => {
-    const server = require('../server')
+    const startServer = require('../server/start')
 
-    server(args)
+    startServer(args)
   }
 }

@@ -11,8 +11,8 @@
   },
   "browser": {
     "./lib/Service.js": "./lib/Client.js",
-    "./modules/assets.js": false,
-    "./modules/http-server.js": false
+    "./server/assets.js": false,
+    "./server/http.js": false
   },
   "repository": {
     "type": "git",

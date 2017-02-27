@@ -1,4 +1,4 @@
-const app = require('./lib/app')
+const app = require('../lib/app')
 
 module.exports = startServer
 

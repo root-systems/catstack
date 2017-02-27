@@ -3,7 +3,7 @@ const { entry } = require('inu')
 const { update } = require('yo-yo')
 const start = require('inu-engine')
 
-const app = require('./lib/app')
+const app = require('../lib/app')
 
 module.exports = startBrowser
 
