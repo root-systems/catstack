@@ -11,9 +11,6 @@ const Path = require('path')
 // TODO get logger from depject modules
 // const log = require('../log')
 
-const pkgPath = Path.join(__dirname, '../package.json')
-const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
-
 const config = {
   root: {
     options: [{
@@ -54,6 +51,8 @@ const config = {
       return command.name === commandName
     })
     if (args.version) {
+      const pkgPath = Path.join(__dirname, '../package.json')
+      const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
       console.log(pkg.version)
     } else if (args.help) {
       if (command) {
