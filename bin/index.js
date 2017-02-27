@@ -36,7 +36,8 @@ const config = {
   commands: [
     require('./server'),
     require('./dev'),
-    require('./test')
+    require('./test'),
+    require('./lint')
   ],
   none: function noCommand (args) {
     if (!args.version) {

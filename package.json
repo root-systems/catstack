@@ -61,6 +61,8 @@
     "require-from-string": "^1.2.1",
     "reselect": "^2.5.4",
     "set-blocking": "^2.0.0",
+    "standard": "^8.6.0",
+    "standard-engine": "^6.0.0",
     "subcommand": "^2.1.0",
     "value-pipe": "github:ahdinosaur/value-pipe",
     "vas": "^3.0.0-pre.1",
