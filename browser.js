@@ -1,14 +1,21 @@
 const pull = require('pull-stream')
+const combine = require('depject')
 const { entry } = require('inu')
 const { update } = require('yo-yo')
 const start = require('inu-engine')
 
-const app = require('../lib/app')
+const configModule = require('./config')
+const appModules = require('./lib/app')
+const coreModules = require('./modules')
 
 module.exports = startBrowser
 
 function startBrowser () {
-  const sockets = app()
+  const sockets = combine(
+    configModule,
+    appModules(),
+    coreModules
+  )
   const store = entry(sockets)
   const { views, dispatch } = start(store)
   // HACK inject dispatch

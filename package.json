@@ -4,12 +4,13 @@
   "description": "modular framework for real-time data-driven apps",
   "main": "index.js",
   "bin": {
-    "catstack": "./bin/index.js"
+    "catstack": "./bin.js"
   },
   "scripts": {
-    "example:start": "./bin/index.js dev server --cwd=$(pwd)/example"
+    "example:start": "./bin.js dev server --cwd=$(pwd)/example"
   },
   "browser": {
+    "./config/index.js": "./config/browser.js",
     "./lib/Service.js": "./lib/Client.js",
     "./server/assets.js": false,
     "./server/http.js": false
@@ -42,8 +43,8 @@
     "cliclopts": "^1.1.1",
     "dargs": "^5.1.0",
     "deglob": "^2.1.0",
-    "depject": "^3.2.0",
-    "depnest": "^1.1.0",
+    "depject": "github:depject/depject#empty-apply",
+    "depnest": "^1.2.0",
     "es2040": "^1.2.4",
     "evalify": "^2.0.0",
     "http-compose": "^1.0.1",
@@ -54,6 +55,7 @@
     "inu-log": "github:ahdinosaur/inu-log#v2",
     "inu-router": "github:ahdinosaur/inu-router#e23b73b4e9378ce7c2bdeaf6d1ad3c2c38e38760",
     "minimatch": "^3.0.3",
+    "minimist": "^1.2.0",
     "modify-values": "^1.0.0",
     "node-dev": "^3.1.3",
     "pkg-conf": "^2.0.0",
@@ -61,7 +63,6 @@
     "read-directory": "^2.0.0",
     "require-from-string": "^1.2.1",
     "reselect": "^2.5.4",
-    "set-blocking": "^2.0.0",
     "standard": "^8.6.0",
     "standard-engine": "^6.0.0",
     "subcommand": "^2.1.0",
