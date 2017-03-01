@@ -1,9 +1,9 @@
 const { keys } = Object
 const assign = require('object-assign')
-const { pull } = require('../../')
 
 module.exports = {
   needs: {
+    'pull.values': 'first',
     'cats.data': 'first'
   },
   manifest: {
@@ -16,7 +16,7 @@ module.exports = {
         const data = api.cats.data()
         const cats = keys(data)
           .map(id => assign({ id }, data[id]))
-        return pull.values(cats)
+        return api.pull.values(cats)
       },
       get: function ({ id }, cb) {
         const data = api.cats.data()

@@ -1,14 +1,18 @@
-const { pull } = require('../../../')
-
 module.exports = {
   needs: {
-    'cats.service.all': 'first',
-    'cats.action.set': 'first'
+    pull: {
+      pipe: 'first',
+      map: 'first'
+    },
+    cats: {
+      'service.all': 'first',
+      'action.set': 'first'
+    }
   },
   create: (api) => ({
-    run: (model, cat) => pull(
+    run: (model, cat) => api.pull.pipe(
       api.cats.service.all(),
-      pull.map(api.cats.action.set)
+      api.pull.map(api.cats.action.set)
     )
   })
 }
