@@ -8,6 +8,11 @@ const configModule = require('./config')
 const appModules = require('./lib/app')
 const coreModules = require('./modules')
 
+// TODO this should be a depject module,
+// but first need to refactor this inu
+// code to work as such, using something
+// like: https://github.com/depject/depject/issues/26
+
 module.exports = startBrowser
 
 function startBrowser () {
