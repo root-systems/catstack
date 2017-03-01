@@ -7,7 +7,7 @@ const cliopts = require('cliclopts')
 module.exports = {
   gives: nest('cli.export'),
   needs: nest({
-    'config.args': 'first',
+    'config.argv': 'first',
     log: {
       info: 'first'
     },
@@ -18,10 +18,10 @@ module.exports = {
     var match
 
     return nest('cli.export', () => {
-      const args = api.config.args()
+      const argv = api.config.argv()
       const config = getConfig()
       if (!match) match = subcommand(config)
-      return match(args)
+      return match(argv)
     })
 
     function getConfig () {
@@ -42,7 +42,6 @@ module.exports = {
           },
           defaults: [{
             name: 'cwd',
-            default: process.cwd(),
             help: 'base directory from which the relative paths are resolved'
           }],
           commands: api.cli.command(),

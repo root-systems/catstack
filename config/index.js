@@ -1,28 +1,76 @@
 const nest = require('depnest')
-const parseArgs = require('minimist')
-const formatArgs = require('dargs')
+const envToObj = require('env-to-obj')
+const parseArgv = require('minimist')
 const pkgConf = require('pkg-conf')
+const deepAssign = require('deep-assign')
 
 module.exports = {
   gives: nest('config', [
-    'cwd',
-    'args'
+    'env',
+    'argv',
+    'args',
+    'pkg',
+    'defaults',
+    'all'
   ]),
   create: () => {
+    var env, argv, args, pkg, all
     return nest('config', {
-      cwd,
-      args
+      env: getEnv,
+      argv: getArgv,
+      args: getArgs,
+      pkg: getPkg,
+      defaults,
+      all: getAll
     })
 
-    function args () {
-      const packageOpts = pkgConf.sync('catstack')
-      const packageArgs = formatArgs(packageOpts)
-      const cliArgs = process.argv.slice(2)
-      return cliArgs.concat(packageArgs)
+    function getEnv () {
+      if (!env) {
+        env = envToObj(process.env)
+      }
+      return env
     }
 
-    function cwd () {
-      return parseArgs(args()).cwd
+    function getArgv () {
+      if (!argv) argv = process.argv.slice(2)
+      return argv
+    }
+
+    function getArgs () {
+      if (!args) {
+        args = parseArgv(getArgv())
+        delete args._
+      }
+      return args
+    }
+
+    function getPkg () {
+      if (!pkg) {
+        pkg = pkgConf.sync('catstack', {
+          cwd: getEnv().cwd
+        })
+      }
+      return pkg
+    }
+
+    function defaults () {
+      return {
+        cwd: process.cwd(),
+        port: 5000
+      }
+    }
+
+    function getAll () {
+      if (!all) {
+        all = deepAssign(
+          {},
+          defaults(),
+          getPkg(),
+          getEnv(),
+          getArgs()
+        )
+      }
+      return all
     }
   }
 }

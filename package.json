@@ -11,9 +11,8 @@
   },
   "browser": {
     "./config/index.js": "./config/browser.js",
-    "./lib/Service.js": "./lib/Client.js",
-    "./server/assets.js": false,
-    "./server/http.js": false
+    "./modules/index.js": "./modules/browser.js",
+    "./lib/Service.js": "./lib/Client.js"
   },
   "repository": {
     "type": "git",
@@ -41,10 +40,11 @@
     "catstack-assets": "^1.0.0-pre.0",
     "catstack-log": "github:catstack/catstack-log",
     "cliclopts": "^1.1.1",
-    "dargs": "^5.1.0",
+    "deep-assign": "^2.0.0",
     "deglob": "^2.1.0",
     "depject": "github:depject/depject#empty-apply",
     "depnest": "^1.2.0",
+    "env-to-obj": "^1.0.0",
     "es2040": "^1.2.4",
     "evalify": "^2.0.0",
     "http-compose": "^1.0.1",

@@ -4,7 +4,7 @@ const nest = require('depnest')
 
 module.exports = {
   config: {
-    needs: nest('config.cwd', 'first'),
+    needs: nest('config.all', 'first'),
     gives: nest({
       'config.assets': [
         'entryFile',
@@ -16,7 +16,7 @@ module.exports = {
       js: () => ({
         transform: [
           [ 'evalify', { files: ['**/service.js', '**/services/*.js'] } ],
-          [ 'bulkify', { vars: { cwd: api.config.cwd(), process } } ],
+          [ 'bulkify', { vars: { cwd: api.config.all().cwd, process } } ],
           'es2040'
         ]
       })

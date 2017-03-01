@@ -14,6 +14,7 @@ module.exports = {
       info: 'first'
     },
     config: {
+      all: 'first',
       http: {
         port: 'first'
       }
@@ -72,7 +73,7 @@ module.exports = {
     }
 
     function port () {
-      return 5000
+      return api.config.all().port
     }
 
     function handler () {

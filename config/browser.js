@@ -2,17 +2,11 @@ const nest = require('depnest')
 
 module.exports = {
   gives: nest('config', [
-    'cwd',
-    'args'
+    'all'
   ]),
   create: () => {
     return nest('config', {
-      cwd,
-      args
+      all: () => {}
     })
-
-    function args () {}
-
-    function cwd () {}
   }
 }
