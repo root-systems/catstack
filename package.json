@@ -7,7 +7,8 @@
     "catstack": "./bin.js"
   },
   "scripts": {
-    "example:start": "./bin.js dev server --cwd=$(pwd)/example"
+    "start": "./bin.js server --cwd=$(pwd)/example",
+    "dev": "./bin.js dev server --cwd=$(pwd)/example"
   },
   "browser": {
     "./config/index.js": "./config/browser.js",
