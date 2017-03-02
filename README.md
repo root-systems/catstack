@@ -1,16 +1,75 @@
-# catstack
+<h1 align="center">
+  <img
+    alt="catstack on a post-it note"
+    src="http://i.imgur.com/v5zw1z3.jpg"
+    height="200"
+  />
+  <br />
+  catstack
+</h1>
 
-** work in progress **
+<h4 align="center">
+  :cat2: :cat2: :cat2: A modular framework for teams working on production web apps.
+</h4>
 
-modular framework for data-driven real-time apps
+<div align="center">
+  <!-- stability -->
+  <a href="https://nodejs.org/api/documentation.html#documentation_stability_index">
+    <img src="https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square" alt="stability" />
+  </a>
+  <!-- npm version -->
+  <a href="https://npmjs.org/package/catstack">
+    <img src="https://img.shields.io/npm/v/catstack.svg?style=flat-square" alt="npm version" />
+  </a>
+  <!-- build status -->
+  <a href="https://travis-ci.org/enspiral-root-systems/catstack">
+    <img src="https://img.shields.io/travis/enspiral-root-systems/catstack/master.svg?style=flat-square" alt="build status" />
+  </a>
+  <!-- test coverage -->
+  <a href="https://codecov.io/github/enspiral-root-systems/catstack">
+    <img src="https://img.shields.io/codecov/c/github/enspiral-root-systems/catstack/master.svg?style=flat-square" alt="test coverage" />
+  </a>
+  <!-- downloads -->
+  <a href="https://npmjs.org/package/catstack">
+    <img src="https://img.shields.io/npm/dm/catstack.svg?style=flat-square"
+      alt="Downloads" />
+  </a>
+  <!-- standard style -->
+  <a href="https://github.com/feross/standard">
+    <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square" alt="standard style" />
+  </a>
+</div>
 
-![cat stack](http://i.imgur.com/v5zw1z3.jpg)
+<details>
+  <summary>table of contents</summary>
+  <li><a href="#features">features</a></li>
+  <li><a href="#demos">demos</a></li>
+  <li><a href="#concepts">concepts</a></li>
+  <li><a href="#bin">bin</a></li>
+  <li><a href="#api">api</a></li>
+  <li><a href="#install">install</a></li>
+  <li><a href="#inspiration">inspiration</a></li>
+</details>
 
-made by [Enspiral Root Systems](https://github.com/enspiral-root-systems/meta)
+sponsored by [Enspiral Root Systems](https://github.com/enspiral-root-systems/meta)
 
 inspired by [`ahdinosaur/mad-science-handbook`](https://github.com/ahdinosaur/mad-science-handbook)
 
 for previous version, see [catstack@1](https://github.com/enspiral-root-systems/catstack/commit/8830cf8b4bb8ce794ed491d03ab0d96bbb66df8f)
+
+## features
+
+- provides development architecture which linearly scales complexity as your app evolves.
+- provides prescriptive opinions to bootstap teams onto a consistent development platform across projects.
+- everything is a [`depject`](https://github.com/depject/depject) module that can be overridden or combined.
+- app file structure maps to app modules, making it easy to separate concerns and get things done.
+- provides full stack app server for both development and production.
+- consistent concepts across front and back end.
+
+
+## demos
+
+- [catstack.herokuapp.com](https://catstack.herokuapp.com/): this repo's [./example](example) deployed to heroku
 
 ## concepts
 
@@ -21,48 +80,40 @@ for previous version, see [catstack@1](https://github.com/enspiral-root-systems/
 - [data logs and views](https://github.com/flumedb/flumedb)
 - [commands](http://substack.net/task_automation_with_npm_run)
 
-## tools
+## bin
 
-- [node](https://github.com/creationix/nvm)
-  - when in this directory run `nvm use` which will use the version of `node` specified in [our .nvmrc](./.nvmrc).
-- [packages](https://www.npmjs.com/)
-  - install with `npm install -g npm@3`
-  - to install a package, run `npm install --save my-favorite-package`
-
-## scripts
-
-- [create](#create)
-- [install](#install)
-- [start](#start)
+- [generate](#generate)
+- [dev](#dev)
+- [server](#server)
 - [test](#test)
 - [lint](#lint)
-- [format](#format)
-- [database](#database)
 
-### install
+### gen
+
+TODO
 
 generate new project
 
 ```shell
-catstack gen:project
+catstack generate:project
 ```
 
 ### start
 
 #### dev
 
-starts development environment
+starts development server
 
 ```shell
-catstack start:dev
+catstack dev server
 ```
 
-#### prod
+#### server
 
-starts production environment
+starts production server
 
 ```shell
-catstack start
+catstack server
 ```
 
 ### test
@@ -88,20 +139,6 @@ npm run lint -- './todos/**/*.js'
 ```
 
 default glob is `./**/*.js` ignoring `node_modules`
-
-### format
-
-converts to [standard style](http://standardjs.com) if possible
-
-can optionally take a [glob](https://www.npmjs.com/package/glob)
-
-```shell
-npm run format -- './**/*.js'
-```
-
-default glob is `./**/*.js` ignoring `node_modules`
-
-### db:clean
 
 ## directory structure
 
