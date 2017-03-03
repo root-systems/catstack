@@ -21,6 +21,13 @@ function startBrowser () {
     appModules(),
     coreModules
   )
+
+  const cssRender = sockets.css.render[0]
+  const styles = document.createElement('style')
+  document.head.appendChild(styles)
+  console.log('sockets', sockets)
+  cssRender(styles)
+
   const store = entry(sockets)
   const { views, dispatch } = start(store)
   // HACK inject dispatch

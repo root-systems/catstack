@@ -1,13 +1,13 @@
 module.exports = {
   needs: {
-    'html.create': 'first',
-    'app.layout': 'first'
+    app: {
+      layout: 'first',
+      'element.home': 'first'
+    }
   },
   create: (api) => ({
     route: '/',
     layout: api.app.layout,
-    view: (model, dispatch) => api.html.create`
-      <div>home!</div>  
-    `
+    view: api.app.element.home
   })
 }
