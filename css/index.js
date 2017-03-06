@@ -4,19 +4,23 @@ const { createRenderer, combineRules, enhance } = require('fela')
 const { render } = require('fela-dom')
 const devPlugins = require('fela-preset-dev')
 const webPlugins = require('fela-preset-web')
+const StyledElement = require('hyper-fela')
 
 module.exports = {
   gives: nest('css', [
     'config',
     'render',
     'renderer',
-    'renderRule'
+    'renderRule',
+    'element'
   ]),
   needs: nest({
     'config.all': 'first',
+    'html.h': 'first',
     css: {
       config: 'reduce',
-      renderer: 'first'
+      renderer: 'first',
+      renderRule: 'first'
     }
   }),
   create: (api) => {
@@ -37,6 +41,10 @@ module.exports = {
         if (!renderer) renderer = createRenderer(api.css.config())
         return renderer
       },
+      element: StyledElement({
+        h: api.html.h,
+        renderRule: api.css.renderRule
+      }),
       render: (mountNode) => render(api.css.renderer(), mountNode),
       renderRule: (rule, props) => {
         return api.css.renderer().renderRule(rule, props)
