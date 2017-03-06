@@ -1,8 +1,8 @@
 module.exports = {
   needs: {
-    'html.create': 'first'
+    'html.hx': 'first'
   },
-  create: (api) => (cat) => api.html.create`
+  create: (api) => (cat) => api.html.hx`
     <h1>${cat ? cat.name : ''}!</h1>  
   `
 }
