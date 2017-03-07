@@ -9,10 +9,18 @@ const StyledElement = require('hyper-fela')
 module.exports = {
   gives: nest('css', [
     'config',
+    'combineRules',
+    'element',
+    'enhance',
     'render',
     'renderer',
     'renderRule',
-    'element'
+    'renderStatic',
+    'renderKeyframe',
+    'renderFont',
+    'renderToString',
+    'subscribe',
+    'clear'
   ]),
   needs: nest({
     'config.all': 'first',
