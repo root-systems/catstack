@@ -53,7 +53,6 @@
     "evalify": "^2.0.0",
     "fela": "^4.2.6",
     "fela-dom": "^4.2.6",
-    "fela-preset-dev": "^4.2.6",
     "fela-preset-web": "^4.2.6",
     "global": "^4.3.1",
     "http-compose": "^1.0.1",

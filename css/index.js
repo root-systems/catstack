@@ -2,7 +2,7 @@ const nest = require('depnest')
 const assign = require('object-assign')
 const { createRenderer, combineRules, enhance } = require('fela')
 const { render } = require('fela-dom')
-const devPlugins = require('fela-preset-dev')
+// const devPlugins = require('fela-preset-dev')
 const webPlugins = require('fela-preset-web')
 const StyledElement = require('hyper-fela')
 
@@ -37,10 +37,7 @@ module.exports = {
       config: (sofar = {}) => assign({}, sofar, {
         plugins: [
           ...(sofar.plugins || []),
-          ...webPlugins,
-          // TODO
-          //...(api.config.all().nodeDev === 'development' ? devPlugins : [])
-          ...devPlugins
+          ...webPlugins
         ]
       }),
       combineRules,
