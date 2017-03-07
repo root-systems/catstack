@@ -25,6 +25,7 @@ module.exports = {
     })
 
     function config (sofar = {}) {
+      const cwd = api.config.all().cwd
       var next = assign({}, sofar, {
         entries: [
           join(__dirname, '../browserEntry.js')
@@ -32,7 +33,7 @@ module.exports = {
         debug: api.config.all().nodeEnv !== 'production',
         transform: [
           [ 'evalify', { files: ['**/service.js', '**/services/*.js'] } ],
-          [ 'bulkify', { vars: { cwd: api.config.all().cwd, process } } ],
+          [ 'bulkify', { vars: { cwd, process } } ],
           'es2040'
         ].concat(sofar.transform || [])
       })
@@ -44,9 +45,8 @@ module.exports = {
           return require(name + '/package.json').version
         })
       }
-      console.log(cacheObject)
       cache = Cache(
-        join(__dirname, '../.cache'),
+        join(cwd, '.cache'),
         cacheObject,
         cacheStats.update
       )
