@@ -1,7 +1,6 @@
 const pull = require('pull-stream')
 const combine = require('depject')
 const { entry } = require('inu')
-const { update } = require('yo-yo')
 const start = require('inu-engine')
 
 const configModule = require('./config')
@@ -23,6 +22,8 @@ function startBrowser () {
   )
 
   const cssRender = sockets.css.render[0]
+  const htmlUpdate = sockets.html.update[0]
+
   const styles = document.createElement('style')
   document.head.appendChild(styles)
   console.log('sockets', sockets)
@@ -30,9 +31,12 @@ function startBrowser () {
 
   const store = entry(sockets)
   const { views, dispatch } = start(store)
+
   // HACK inject dispatch
   sockets.inu.dispatch.push(dispatch)
+
   const main = document.createElement('div')
   document.body.appendChild(main)
-  pull(views(), pull.drain(update.bind(null, main)))
+
+  pull(views(), pull.drain(htmlUpdate.bind(null, main)))
 }
