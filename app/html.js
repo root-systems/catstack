@@ -6,7 +6,7 @@ if (typeof window === 'undefined') {
 const nest = require('depnest')
 const create = require('hyps/createElement')
 const morphdom = require('morphdom')
-const H = require('@skatejs/val')
+const { default: H, cacheElementEventHandlers } = require('@skatejs/val')
 const Hx = require('hyperx')
 
 module.exports = {
@@ -48,8 +48,8 @@ function copier (fromNode, toNode) {
 }
 
 function copyEvents (fromNode, toNode) {
-  const toEventHandlers = H.cacheElementEventHandlers.get(toNode)
-  const fromEventHandlers = H.cacheElementEventHandlers.get(fromNode)
+  const toEventHandlers = cacheElementEventHandlers.get(toNode)
+  const fromEventHandlers = cacheElementEventHandlers.get(fromNode)
 
   // copy events:
   uniqueKeys(toEventHandlers, fromEventHandlers).forEach(name => {
