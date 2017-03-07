@@ -46,7 +46,7 @@
     "create-html": "^1.1.0",
     "deep-assign": "^2.0.0",
     "deglob": "^2.1.0",
-    "depject": "github:depject/depject#empty-apply",
+    "depject": "^4.0.0",
     "depnest": "^1.3.0",
     "env-to-obj": "^1.0.0",
     "es2040": "^1.2.4",
