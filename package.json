@@ -64,7 +64,7 @@
     "inu": "^4.0.0-pre.0",
     "inu-engine": "^1.0.0-pre.0",
     "inu-log": "github:ahdinosaur/inu-log#v2",
-    "inu-router": "github:ahdinosaur/inu-router#e23b73b4e9378ce7c2bdeaf6d1ad3c2c38e38760",
+    "inu-router": "github:ahdinosaur/inu-router#675f362ee4aff2b1c03c890186b02f02ea6e2396",
     "minimatch": "^3.0.3",
     "minimist": "^1.2.0",
     "modify-values": "^1.0.0",
