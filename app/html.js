@@ -4,7 +4,7 @@ if (typeof window === 'undefined') {
 }
 
 const nest = require('depnest')
-const create = require('hyps/h')
+const create = require('hyps/createElement')
 const update = require('morphdom')
 const H = require('@skatejs/val')
 const Hx = require('hyperx')
