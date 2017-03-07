@@ -59,6 +59,7 @@
     "http-compose": "^1.0.1",
     "http-errors": "^1.6.1",
     "http-sender": "^2.0.0",
+    "hyper-fela": "^1.0.0",
     "hyps": "^1.0.0",
     "inu": "^4.0.0-pre.0",
     "inu-engine": "^1.0.0-pre.0",
