@@ -1,10 +1,15 @@
+const Url = require('url')
+const send = require('send')
 const Accept = require('accepts')
 const nest = require('depnest')
 
 module.exports = {
-  needs: nest('assets', {
-    'js': 'first',
-    'html': 'first'
+  needs: nest({
+    'config.all': 'first',
+    assets: {
+      'js': 'first',
+      'html': 'first'
+    }
   }),
   gives: nest('http.handler'),
   create: (api) => {
@@ -21,7 +26,9 @@ module.exports = {
             return js(req, res, context, next)
         }
 
-        switch (accept.type(['html'])) {
+        switch (accept.type(['image/*', 'html'])) {
+          case 'image/*':
+            return file(req, res, context, next)
           case 'html':
             return html(req, res, context, next)
         }
@@ -39,5 +46,13 @@ module.exports = {
       res.setHeader('Content-Type', 'text/html')
       next(null, api.assets.html())
     }
+
+    function file (req, res, context, next) {
+      const { cwd: root } = api.config.all()
+      const url = Url.parse(req.url)
+      const path = url.pathname.substring(1)
+      next(null, send(req, path, { root }))
+    }
   }
 }
+
