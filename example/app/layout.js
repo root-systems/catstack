@@ -1,17 +1,19 @@
 module.exports = {
-  needs: {
-    'html.hx': 'first'
-  },
+  needs: ['app.element', {
+    Main: 'first',
+    Nav: 'first',
+    Link: 'first'
+  }],
   create: (api) => (view) => {
-    return (model, dispatch) => api.html.hx`
-      <div>
-        <nav>
-          <a href='/'>home</a>
-          <a href=${`/cats`}>cats party!</a>
-          <a href='/nope'>nope</a>
-        </nav>
-        ${view(model, dispatch)}
-      </div>
-    `
+    const { Main, Nav, Link } = api.app.element
+
+    return (model, dispatch) => Main([
+      Nav([
+        Link({ href: '/' }, 'home'),
+        Link({ href: '/cats' }, 'cat stack!'),
+        Link({ href: '/nope' }, 'nope')
+      ]),
+      view(model, dispatch)
+    ])
   }
 }

@@ -1,16 +1,24 @@
 module.exports = {
-  needs: {
-    'html.hx': 'first'
-  },
-  create: (api) => (cats) => api.html.hx`
-    <ul>
-      ${cats.map(cat => api.html.hx`
-        <li>
-          <a href=${`/cats/${cat.id}`}>
-            ${cat.name}
-          </a>
-        </li>
-      `)}
-    </ul>
-  `
+  needs: ['app.element.Link', 'first'],
+  create: (api) => {
+    const { Element } = api.css
+
+    const listStyle = (props) => ({})
+    const List = Element('ul', listStyle)
+
+    const listItemStyle = (props) => ({})
+    const ListItem = Element('li', listItemStyle)
+
+    const { Link } = api.app.element
+
+    return ({ cats }) => List([
+      cats.map(cat => ListItem([
+        Link({
+          href: `/cats/${cat.id}`
+        }, [
+          cat.name
+        ])
+      ]))
+    ])
+  }
 }

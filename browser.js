@@ -2,6 +2,7 @@ const pull = require('pull-stream')
 const combine = require('depject')
 const { entry } = require('inu')
 const start = require('inu-engine')
+const prioritize = require('depject-priority')
 
 const configModule = require('./config')
 const appModules = require('./lib/app')
@@ -15,11 +16,11 @@ const coreModules = require('./modules')
 module.exports = startBrowser
 
 function startBrowser () {
-  const sockets = combine(
+  const sockets = combine(prioritize(
     configModule,
     appModules(),
     coreModules
-  )
+  ))
 
   const cssRender = sockets.css.render[0]
   const htmlUpdate = sockets.html.update[0]

@@ -1,14 +1,13 @@
 module.exports = {
   needs: {
-    'html.hx': 'first',
     'app.css.primaryColor': 'first'
   },
-  create: (api) => ({
-    html: () => api.html.hx`
-      <div>
-        home!
-      </div>
-    `,
-    css: api.app.css.primaryColor
-  })
+  create: (api) => {
+    const Home = api.css.Element(
+      'div',
+      api.app.css.primaryColor
+    )
+
+    return () => Home({}, 'home')
+  }
 }

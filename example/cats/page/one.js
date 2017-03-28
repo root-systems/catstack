@@ -10,8 +10,8 @@ module.exports = {
     route: '/cats/:catId',
     layout: api.app.layout,
     get: api.cats.get.oneProps,
-    view: (props) => {
-      return api.cats.element.one(props.cat)
+    view: ({ cat }) => {
+      return api.cats.element.one({ cat })
     }
   })
 }

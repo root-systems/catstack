@@ -1,8 +1,11 @@
 module.exports = {
-  needs: {
-    'html.hx': 'first'
-  },
-  create: (api) => (cat) => api.html.hx`
-    <h1>${cat ? cat.name : ''}!</h1>  
-  `
+  create: (api) => {
+    const oneStyle = (props) => ({})
+    const One = api.css.Element('h1', oneStyle)
+
+    return ({ cat }) => One([
+      cat && cat.name,
+      '!'
+    ])
+  }
 }

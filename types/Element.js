@@ -18,22 +18,15 @@ function Element (definition) {
   var { path, needs = {}, create } = definition
   var gives = {}
   set(gives, path, true)
-  set(needs, ['css', 'element'], 'first')
+  set(needs, ['css', 'Element'], 'first')
+  set(needs, ['css', 'connect'], 'first')
+  set(needs, ['css', 'combineRules'], 'first')
+  set(needs, ['html', 'h'], 'first')
   const module = { gives, needs, create }
   module.create = (api) => {
-    const elementDefinition = create(api)
-    if (typeof elementDefinition === 'function') {
-      var element = elementDefinition
-    } else {
-      var styleElement
-      const { html, css } = elementDefinition
-      var element = function element (properties, children) {
-        if (!styleElement) styleElement = api.css.element(html, css)
-        return styleElement(properties, children)
-      }
-    }
+    const ElementCtor = create(api)
     var globalExports = {}
-    set(globalExports, path, element)
+    set(globalExports, path, ElementCtor)
     return globalExports
   }
   return module

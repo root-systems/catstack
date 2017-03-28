@@ -14,8 +14,8 @@ module.exports = {
     route: '/cats',
     layout: api.app.layout,
     get: api.cats.get.allProps,
-    view: (props) => {
-      const view = api.cats.element.all(props.cats)
+    view: ({ cats }) => {
+      const view = api.cats.element.all({ cats })
 
       return onLoad(view, handleLoad)
 
