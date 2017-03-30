@@ -9,14 +9,14 @@ const DEFAULT_IGNORE = [
 
 module.exports = {
   gives: nest('cli.command'),
-  create: () => nest('cli.command', () => ({
+  needs: nest('config.all', 'first'),
+  create: (api) => nest('cli.command', () => ({
     name: 'test',
     options: [{}],
     command: (args) => {
       const deglob = require('deglob')
       const test = require('pull-test/cli')
-
-      const { cwd } = args
+      const { cwd } = api.config.all()
       const paths = args._
       if (paths.length === 0) {
         deglob(DEFAULT_PATTERNS, {

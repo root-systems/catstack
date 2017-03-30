@@ -1,8 +1,10 @@
+const { assign } = Object
 const nest = require('depnest')
 
 module.exports = {
   gives: nest('cli.command'),
-  create: () => nest('cli.command', () => ({
+  needs: nest('config.all', 'first'),
+  create: (api) => nest('cli.command', () => ({
     name: 'lint',
     options: [{
       name: 'fix',
@@ -17,8 +19,9 @@ module.exports = {
       const lintOptions = require('standard/options')
       const lint = require('standard-engine').cli
 
+      const { cwd } = api.config.all()
       process.argv.splice(2, 1)
-      lint(lintOptions)
+      lint(assign({ cwd }, lintOptions))
     }
   }))
 }
